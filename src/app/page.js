@@ -14,16 +14,16 @@ export default function Home() {
       </div>
       <div className="flex items-center justify-center">
         <div>
-          <button className="text-white p-2 text-base md:text-2xl bg-[#FF5531] rounded-md m-2"
+          <button className="text-white p-2 text-base md:text-2xl bg-[#FF5531] hover:bg-[#CC4426] rounded-md m-2"
           onClick={() => router.push("/template")}
           >Browse templates</button>
         </div>
         <div>
-          <button className="text-white p-2 text-base md:text-2xl bg-[#FF5531] rounded-md m-2"
+          <button className="text-white p-2 text-base md:text-2xl bg-[#FF5531] hover:bg-[#CC4426] rounded-md m-2"
           onClick={() => router.push("/component")}
           >Browse components</button>
         </div>
-        <img src="/images/bvt_logo.png" alt="" className="w-1/3"/>
+        <img src="/images/bvt_logo.png" alt="" className="w-1/4"/>
       </div>
     </div>
   );

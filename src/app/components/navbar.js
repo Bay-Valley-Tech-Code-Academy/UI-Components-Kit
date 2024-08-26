@@ -8,8 +8,8 @@ export default function Navbar() {
 
   const getButtonClasses = (path) =>
     currentRoute === path
-      ? "text-white p-2 text-base md:text-lg bg-[#FF5531] rounded-md"
-      : "text-white p-2 text-base md:text-lg";
+      ? "text-white p-2 text-base md:text-lg bg-[#FF5531] hover:bg-[#CC4426] rounded-md"
+      : "text-white p-2 text-base md:text-lg hover:bg-[#CC4426] hover:rounded-md";
 
   return (
     <nav className="flex justify-between p-4">
