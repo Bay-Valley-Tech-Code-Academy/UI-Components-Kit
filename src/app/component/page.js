@@ -5,7 +5,7 @@ export default function Home() {
     <div className="">
       <Navbar/>
        {/* Grid of Boxes */}
-       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
+       <div className="-mt-2 p-2 mr-2 lg:mt-0 gap-x-6 grid lg:grid-flow-col grid-flow-row auto-cols-max justify-center gap-4">
         <Box
           description="Explore Tailwind CSS"
           title="Tailwind Box Component"
