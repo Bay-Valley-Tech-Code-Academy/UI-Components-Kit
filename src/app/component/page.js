@@ -3,6 +3,7 @@
 import Navbar from "../components/navbar";
 import ComponentCard from "../components/componentCard";
 import NavbarList from "../components/navbarList";
+import Card from "../components/Card/card";
 import { useState } from "react";
 
 export default function Component() {
@@ -11,8 +12,8 @@ export default function Component() {
   const cards = [
     { title: "Navbar", content: <NavbarList /> },
     { title: "Footer", content: "" },
-    { title: "Promo", content: "" },
-    { title: "Card", content: "" },
+    { title: "Carousel", content: "" },
+    { title: "Card", content: <Card/> },
   ];
 
   const handleCardClick = (content) => {
