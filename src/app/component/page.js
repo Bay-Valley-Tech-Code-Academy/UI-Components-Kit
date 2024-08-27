@@ -39,7 +39,12 @@ export default function Component() {
       ) : (
         <div className="flex flex-col p-6">
           <div>
-            <button className="text-white p-1 text-base bg-[#FF5531] rounded-md md:text-lg hover:bg-[#CC4426] m-1" onClick={() => handleCardClick(null)}>Back</button>
+          <button
+            className="text-[#180728] p-3 text-lg bg-[#FF7D61] rounded-md md:text-xl hover:bg-[#CC4426] m-1 md:m-4 ml-auto block"
+            onClick={() => handleCardClick(null)}
+          >
+            Back
+          </button>
           </div>
           <div className="w-full">
             {selectedContent}
