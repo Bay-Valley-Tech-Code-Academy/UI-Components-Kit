@@ -1,14 +1,11 @@
 import { useState } from "react";
-import NavbarOne from "./Navbar/navbarOne";
-import NavbarTwo from "./Navbar/navbarTwo";
-import navbarOneCode from "./Navbar/snippets/navbarOneCode";
-import navbarTwoCode from "./Navbar/snippets/navbarTwoCode";
+import Card from "./card";
 
-export default function NavbarList() {
-  const navbars = [
+export default function CardList() {
+  const cards = [
     {
       id: 1,
-      component: NavbarOne,
+      component: Card,
       code: navbarOneCode,
       props: {
         logo: "MySite",
@@ -20,7 +17,7 @@ export default function NavbarList() {
     },
     {
       id: 2,
-      component: NavbarTwo,
+      component: Card,
       code: navbarTwoCode,
       props: {
         logo: "YourSite",
@@ -32,7 +29,7 @@ export default function NavbarList() {
     },
   ];
 
-  const [previewStates, setPreviewStates] = useState(navbars.map(() => true));
+  const [previewStates, setPreviewStates] = useState(cards.map(() => true));
 
   const togglePreview = (index) => {
     setPreviewStates((prevStates) =>
@@ -42,13 +39,13 @@ export default function NavbarList() {
 
   return (
     <div className="flex flex-col items-center">
-      <h2 className="text-white text-4xl p-2">Navbar</h2>
+      <h2 className="text-white text-4xl p-2">Cards</h2>
       {/* multiple copies later on for different styles */}
-      {navbars.map((navbar, index) => {
-        const NavbarComponent = navbar.component;
+      {cards.map((card, index) => {
+        const CardComponent = card.component;
 
         return (
-          <div key={navbar.id} className="flex flex-col w-full md:w-2/3 mb-8">
+          <div key={card.id} className="flex flex-col w-full md:w-2/3 mb-8">
             <div className="flex justify-between items-center">
               <h3 className="text-white text-base md:text-lg">{previewStates[index] ? "Preview" : "Code"}</h3>
               <button
@@ -62,10 +59,10 @@ export default function NavbarList() {
               className={`w-full h-96 overflow-y-scroll ${previewStates[index] ? "bg-black" : "bg-[#1e293b]"}`}
             >
               {previewStates[index] ? (
-                <NavbarComponent {...navbar.props} />
+                <CardComponent {...card.props} />
               ) : (
                 <pre className="text-white p-4">
-                  <code>{navbar.code}</code>
+                  <code>{card.code}</code>
                 </pre>
               )}
             </div>
