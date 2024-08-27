@@ -11,7 +11,7 @@ export default function Home() {
         <div className="text-2xl my-8 place-self-center text-white"> Ecommerce Kit </div>
         <div className="place-self-center mb-14">
           <Image
-            src="/ui-shop-tool-kit.png"
+            src="/images/ui-shop-tool-kit.png"
             width={500}
             height={900}
             alt="picture of homepage of ui shop toolkit"
@@ -19,7 +19,7 @@ export default function Home() {
         </div>
         <div className="flex flex-row gap-10 justify-center">
           <div className="bg-[#FF5531] px-6 py-2 rounded-md text-white"> <Link href="https://github.com/Bay-Valley-Tech-Code-Academy/UI-Tool-Kit"> Github </Link></div>
-          <div className="bg-[#FF5531] px-6 py-2 rounded-md text-white"> Docs </div>
+          <div className="bg-[#FF5531] px-6 py-2 rounded-md text-white"> <Link href="../doc"> Docs </Link> </div>
         </div>
       </div>
     </div>
