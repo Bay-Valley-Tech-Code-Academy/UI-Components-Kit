@@ -13,9 +13,9 @@ export default function NavbarList() {
       props: {
         logo: "MySite",
         links: ["Home", "About", "Services", "Contact"],
-        backgroundColor: "bg-blue-600",
-        textColor: "text-white",
-        hoverColor: "hover:text-gray-300",
+        backgroundColor: "bg-[#FFF8F0]",
+        textColor: "text-black",
+        hoverColor: "hover:text-purple-600",
       },
     },
     {
@@ -52,14 +52,14 @@ export default function NavbarList() {
             <div className="flex justify-between items-center">
               <h3 className="text-white text-base md:text-lg">{previewStates[index] ? "Preview" : "Code"}</h3>
               <button
-                className="text-white p-1 text-base md:text-lg bg-[#FF5531] hover:bg-[#CC4426] rounded-md m-1"
+                className="text-[#180728] font-bold p-1 text-base md:text-lg bg-[#FF7D61] hover:bg-[#CC4426] rounded-md m-1"
                 onClick={() => togglePreview(index)}
               >
-                {previewStates[index] ? "Code ->" : "Preview ->"}
+                {previewStates[index] ? "Code -->" : "Preview ->"}
               </button>
             </div>
             <div
-              className={`w-full h-96 overflow-y-scroll ${previewStates[index] ? "bg-black" : "bg-[#1e293b]"}`}
+              className={`w-full h-96 overflow-y-scroll ${previewStates[index] ? "bg-[#523B82]" : "bg-[#1e293b]"}`}
             >
               {previewStates[index] ? (
                 <NavbarComponent {...navbar.props} />
