@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Card from "./card";
+import CardOneCode from './snippets/cardOneCode.js'
 
 export default function CardList() {
   const cards = [
     {
       id: 1,
       component: Card,
-      code: navbarOneCode,
+      code: CardOneCode,
       props: {
         logo: "MySite",
         links: ["Home", "About", "Services", "Contact"],
