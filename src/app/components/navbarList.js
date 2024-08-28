@@ -3,6 +3,8 @@ import NavbarOne from "./Navbar/navbarOne";
 import NavbarTwo from "./Navbar/navbarTwo";
 import navbarOneCode from "./Navbar/snippets/navbarOneCode";
 import navbarTwoCode from "./Navbar/snippets/navbarTwoCode";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function NavbarList() {
   const navbars = [
@@ -13,7 +15,7 @@ export default function NavbarList() {
       props: {
         logo: "MySite",
         links: ["Home", "About", "Services", "Contact"],
-        backgroundColor: "bg-[#FFF8F0]",
+        
         textColor: "text-black",
         hoverColor: "hover:text-purple-600",
       },
@@ -64,9 +66,13 @@ export default function NavbarList() {
               {previewStates[index] ? (
                 <NavbarComponent {...navbar.props} />
               ) : (
-                <pre className="text-white p-4">
-                  <code>{navbar.code}</code>
-                </pre>
+                <SyntaxHighlighter
+                  language="javascript" // or other languages if needed
+                  style={nightOwl} // Choose a theme that you prefer
+                  className="text-white"
+                >
+                  {navbar.code}
+                </SyntaxHighlighter>
               )}
             </div>
           </div>
