@@ -3,7 +3,10 @@
 import Navbar from "../components/navbar";
 import ComponentCard from "../components/componentCard";
 import NavbarList from "../components/navbarList";
+import CarouselList from "../components/CarouselList";
 import { useState } from "react";
+
+import BVTLogo from '../../../public/images/bvt_logo.png'
 
 export default function Component() {
   const [selectedContent, setSelectedContent] = useState(null);
@@ -13,6 +16,7 @@ export default function Component() {
     { title: "Footer", content: "" },
     { title: "Promo", content: "" },
     { title: "Card", content: "" },
+    { title: "Carousel", content: <CarouselList/>},
   ];
 
   const handleCardClick = (content) => {
