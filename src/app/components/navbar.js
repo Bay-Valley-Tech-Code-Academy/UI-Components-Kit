@@ -8,14 +8,14 @@ export default function Navbar() {
 
   const getButtonClasses = (path) =>
     currentRoute === path
-      ? "text-white p-2 text-base md:text-lg bg-[#FF5531] hover:bg-[#CC4426] rounded-md"
-      : "text-white p-2 text-base md:text-lg hover:bg-[#CC4426] hover:rounded-md";
+      ? "text-[#180728] p-1 text-base md:text-lg bg-[#FF7D61] hover:bg-[#CC4426] rounded-md m-1"
+      : "text-white p-1 text-base md:text-lg hover:bg-[#CC4426] hover:rounded-md m-1";
 
   return (
     <nav className="flex justify-between p-4">
       <div>
         <button 
-          className="text-white p-2 text-base md:text-lg"
+          className="text-white p-2 text-base md:text-lg font-extrabold"
           onClick={() => router.push("/")}
         >BVT UI</button>
       </div>
