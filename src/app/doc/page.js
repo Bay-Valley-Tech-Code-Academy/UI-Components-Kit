@@ -93,11 +93,11 @@ export default function DocumentationLayout() {
             <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
               <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Overview</h2>
               <p className="mb-6 text-[#ffffff]">
-              This is a Next.js project bootstrapped with{" "}
-              <code>create-next-app</code>.
+                This is a Next.js project bootstrapped with{" "}
+                <code>create-next-app</code>.
               </p>
               <p className="mb-6 text-[#ffffff]">
-              This components project will help you build your own website.
+                This components project will help you build your own website.
               </p>
             </div>
           </section>
@@ -107,50 +107,50 @@ export default function DocumentationLayout() {
             <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
               <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Prerequisites</h2>
               <p className="mb-6 text-[#ffffff]">
-              Before you begin, make sure you have the following tools installed
-              on your system:
-            </p>
-            <ul className="list-disc list-inside mb-6 text-[#ffffff]">
-              <li>
-                <strong>Git</strong> - Version control system. You can download
-                it from{" "}
-                <a
-                  href="https://git-scm.com/"
-                  className="text-indigo-200 hover:text-orange-400 hover:underline"
-                >
-                  git-scm.com
-                </a>
-                .
-              </li>
-              <li>
-                <strong>Node.js</strong> - The latest stable version is
-                recommended. You can download it from{" "}
-                <a
-                  href="https://nodejs.org/"
-                  className="text-indigo-200 hover:text-orange-400 hover:underline"
-                >
-                  nodejs.org
-                </a>
-                .
-              </li>
-              <li>
-                <strong>Visual Studio Code</strong> - A powerful code editor.
-                You can download it from{" "}
-                <a
-                  href="https://code.visualstudio.com/"
-                  className="text-indigo-200 hover:text-orange-400 hover:underline"
-                >
-                  code.visualstudio.com
-                </a>
-                .
-              </li>
-            </ul>
-            <p className="mb-6 text-[#ffffff]">
-              Ensure that you have these tools installed and configured before
-              proceeding with the setup instructions.
+                Before you begin, make sure you have the following tools installed
+                on your system:
+              </p>
+              <ul className="list-disc list-inside mb-6 text-[#ffffff]">
+                <li>
+                  <strong>Git</strong> - Version control system. You can download
+                  it from{" "}
+                  <a
+                    href="https://git-scm.com/"
+                    className="text-indigo-200 hover:text-orange-400 hover:underline"
+                  >
+                    git-scm.com
+                  </a>
+                  .
+                </li>
+                <li>
+                  <strong>Node.js</strong> - The latest stable version is
+                  recommended. You can download it from{" "}
+                  <a
+                    href="https://nodejs.org/"
+                    className="text-indigo-200 hover:text-orange-400 hover:underline"
+                  >
+                    nodejs.org
+                  </a>
+                  .
+                </li>
+                <li>
+                  <strong>Visual Studio Code</strong> - A powerful code editor.
+                  You can download it from{" "}
+                  <a
+                    href="https://code.visualstudio.com/"
+                    className="text-indigo-200 hover:text-orange-400 hover:underline"
+                  >
+                    code.visualstudio.com
+                  </a>
+                  .
+                </li>
+              </ul>
+              <p className="mb-6 text-[#ffffff]">
+                Ensure that you have these tools installed and configured before
+                proceeding with the setup instructions.
               </p>
               <p className="mb-6 text-[#ffffff]">
-              Assuming you have installed all prerequisite packages for your project, you can proceed to the next section.
+                Assuming you have installed all prerequisite packages for your project, you can proceed to the next section.
               </p>
             </div>
           </section>
@@ -163,40 +163,67 @@ export default function DocumentationLayout() {
                 This section shows the steps of how to properly integrate our components into your project.
               </p>
 
-                {/* Step 1: Components*/}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-semibold text-[#ffffff]">Step 1: Components</h3>
-                    <p className="text-[#ffffff]">
-                      First, head over to the components page and click on a component category that you are wanting to add to your website.
-                    </p>
-                  </div>
+              {/* Step 1: Components */}
+              <div className="mb-6">
+                <h3 className="text-2xl font-semibold text-[#ffffff]">Step 1: Components</h3>
+                <p className="text-[#ffffff]">
+                  First, head over to the components page and click on a component category that you are wanting to add to your website.
+                </p>
+                <div className="flex justify-center mt-4">
+                  <img
+                    src="/images/step1.png"
+                    alt="Screenshot of Step 1"
+                    className="rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
 
-                {/* Step 2: Installation*/}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-semibold text-[#ffffff]">Step 2: Installation</h3>
-                    <p className="text-[#ffffff]">
-                      Once you find a component template you like, click the "code" button to reveal the code for that template, and head over to Visual Studio Code.
-                    </p>
-                  </div>
+              {/* Step 2: Installation */}
+              <div className="mb-6">
+                <h3 className="text-2xl font-semibold text-[#ffffff]">Step 2: Installation</h3>
+                <p className="text-[#ffffff]">
+                  Once you find a component template you like, click the "code" button to reveal the code for that template, and head over to Visual Studio Code.
+                </p>
+                <div className="flex justify-center mt-4">
+                  <img
+                    src="/images/step2.png"
+                    alt="Screenshot of Step 2"
+                    className="rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
 
-                {/* Step 3: Visual Studio Code*/}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-semibold text-[#ffffff]">Step 3: Visual Studio Code</h3>
-                    <p className="text-[#ffffff]">
-                      Create a .js file titled with the relevant name and folder location, and then copy and paste the .js portion of the code into the file and save it.
-                    </p>
-                  </div>
+              {/* Step 3: Visual Studio Code */}
+              <div className="mb-6">
+                <h3 className="text-2xl font-semibold text-[#ffffff]">Step 3: Visual Studio Code</h3>
+                <p className="text-[#ffffff]">
+                  Create a .js file titled with the relevant name in the folder location, and then copy and paste the .js portion of the code into the file and save it.
+                </p>
+                <div className="flex justify-center mt-4">
+                  <img
+                    src="/images/step3.png"
+                    alt="Screenshot of Step 3"
+                    className="rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
 
-                {/* Step 4: Integration*/}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-semibold text-[#ffffff]">Step 4: Integration</h3>
-                    <p className="text-[#ffffff]">
-                      Now that you've created the proper component, you can integrate it into your main application file or any other component. Below is an example of how to use it:
-                    </p>
-                  </div>
+              {/* Step 4: Integration */}
+              <div className="mb-6">
+                <h3 className="text-2xl font-semibold text-[#ffffff]">Step 4: Integration</h3>
+                <p className="text-[#ffffff]">
+                  Now that you've created the proper component, you can integrate it into your main application file or any other component. Below is an example of how to use it:
+                </p>
+                <div className="flex justify-center mt-4">
+                  <img
+                    src="/images/step4.png"
+                    alt="Screenshot of Step 4"
+                    className="rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
             </div>
           </section>
-
 
           {/* Components Section */}
           <section id="components">
