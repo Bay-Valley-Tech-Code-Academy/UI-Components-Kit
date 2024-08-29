@@ -1,8 +1,10 @@
 import { useState } from "react";
 import NavbarOne from "./Navbar/navbarOne";
 import NavbarTwo from "./Navbar/navbarTwo";
+import NavbarThree from "./Navbar/navbarThree";
 import navbarOneCode from "./Navbar/snippets/navbarOneCode";
 import navbarTwoCode from "./Navbar/snippets/navbarTwoCode";
+import navbarThreeCode from "./Navbar/snippets/navbarThreeCode";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -28,6 +30,18 @@ export default function NavbarList() {
         logo: "YourSite",
         links: ["Home", "Portfolio", "Contact"],
         backgroundColor: "bg-gray-800",
+        textColor: "text-white",
+        hoverColor: "hover:text-yellow-300",
+      },
+    },
+    {
+      id: 3,
+      component: NavbarThree,
+      code: navbarThreeCode,
+      props: {
+        logo: "YourSite",
+        links: ["Home", "Prices", "Resources"],
+        backgroundColor: "bg-gray-500",
         textColor: "text-white",
         hoverColor: "hover:text-yellow-300",
       },
