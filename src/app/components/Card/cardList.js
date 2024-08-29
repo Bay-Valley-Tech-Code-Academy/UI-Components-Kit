@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CardOne from './cardOne';
-import CardTwo from './CardTwo'
+import CardTwo from './cardTwo';
 import CardOneCode from './snippets/cardOneCode.js'
 import CardTwoCode from './snippets/cardTwoCode.js'
 
@@ -11,12 +11,13 @@ export default function CardList() {
       component: CardOne,
       code: CardOneCode,
       props: {
-        description:"Explore Tailwind CSS",
-        title:"Tailwind Box Component",
+        description:"Tailwind Box Component",
+        title:"Explore Tailwind CSS",
         button:"Learn More",
-        p:"By John Doe",
+        author:"John Doe",
         buttonColor:"bg-pink-600",
         hoverColor:"hover:bg-orange-500",
+        width:"w-50"
       },
     },
     {
@@ -24,12 +25,13 @@ export default function CardList() {
       component: CardTwo,
       code: CardTwoCode,
       props: {
-        description:"Explore Tailwind CSS",
-        title:"Tailwind Box Component",
+        title:"Bird Watching",
+        description:"Tailwind Box Component",
         button:"Learn More",
-        p:"By John Doe",
-        buttonColor:"bg-pink-600",
-        hoverColor:"hover:bg-orange-500",
+        author:"Jane Doe",
+        buttonColor:"bg-green-600",
+        hoverColor:"hover:bg-red-500",
+        width:"w-full"
       },
     },
   ];
