@@ -57,22 +57,6 @@ export default function DocumentationLayout() {
               </li>
               <li>
                 <a
-                  href="#installation"
-                  className="text-indigo-200 hover:text-orange-400"
-                >
-                  Installation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#example-usage"
-                  className="text-indigo-200 hover:text-orange-400"
-                >
-                  Example Usage
-                </a>
-              </li>
-              <li>
-                <a
                   href="#api-reference"
                   className="text-indigo-200 hover:text-orange-400"
                 >
@@ -111,6 +95,9 @@ export default function DocumentationLayout() {
               <p className="mb-6 text-[#ffffff]">
               This is a Next.js project bootstrapped with{" "}
               <code>create-next-app</code>.
+              </p>
+              <p className="mb-6 text-[#ffffff]">
+              This components project will help you build your own website.
               </p>
             </div>
           </section>
@@ -162,68 +149,53 @@ export default function DocumentationLayout() {
               Ensure that you have these tools installed and configured before
               proceeding with the setup instructions.
               </p>
+              <p className="mb-6 text-[#ffffff]">
+              Assuming you have installed all prerequisite packages for your project, you can proceed to the next section.
+              </p>
             </div>
           </section>
 
+          {/* Getting Started */}
           <section id="getting-started">
-  <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
-    <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Getting Started</h2>
-    <p className="mb-6 text-[#ffffff]">
-      This section will help you integrate our components into your own website projects. Below is an example of how to use the components from our library.
-    </p>
+            <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
+              <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Getting Started</h2>
+              <p className="mb-6 text-[#ffffff]">
+                This section shows the steps of how to properly integrate our components into your project.
+              </p>
 
-    {/* Step 1: Installation Instructions */}
-    <div className="mb-6">
-      <h3 className="text-2xl font-semibold text-[#ffffff]">Step 1: Installation</h3>
-      <p className="text-[#ffffff]">
-        First, ensure you have Node.js installed. Then, install the required packages by running:
-      </p>
-      <pre className="bg-gray-800 text-white p-4 rounded mt-4">
-        npm install your-component-library
-      </pre>
-    </div>
+                {/* Step 1: Components*/}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-semibold text-[#ffffff]">Step 1: Components</h3>
+                    <p className="text-[#ffffff]">
+                      First, head over to the components page and click on a component category that you are wanting to add to your website.
+                    </p>
+                  </div>
 
-    {/* Step 2: Usage Example */}
-    <div className="mb-6">
-      <h3 className="text-2xl font-semibold text-[#ffffff]">Step 2: Usage Example</h3>
-      <p className="text-[#ffffff]">
-        After installation, you can import and use the components in your project as shown below:
-      </p>
-      <pre className="bg-gray-800 text-white p-4 rounded mt-4">
-        {`import Navbar from 'your-component-library/Navbar';`}
-        {"\n\n"}
-        {`export default function App() {`}
-        {"\n"}
-        {`  return (`}
-        {"\n"}
-        {`    <div>`}
-        {"\n"}
-        {`      <Navbar />`}
-        {"\n"}
-        {`    </div>`}
-        {"\n"}
-        {`  );`}
-        {"\n"}
-        {`}`}
-      </pre>
-    </div>
+                {/* Step 2: Installation*/}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-semibold text-[#ffffff]">Step 2: Installation</h3>
+                    <p className="text-[#ffffff]">
+                      Once you find a component template you like, click the "code" button to reveal the code for that template, and head over to Visual Studio Code.
+                    </p>
+                  </div>
 
-    {/* Step 3: Visual Representation */}
-    <div className="mb-6">
-      <h3 className="text-2xl font-semibold text-[#ffffff]">Step 3: Visual Example</h3>
-      <p className="text-[#ffffff]">
-        Below is a screenshot of what the Navbar component looks like when integrated into your project:
-      </p>
-      <div className="flex justify-center mt-4">
-        <img
-          src="/path-to-screenshot.png"
-          alt="Navbar Component Screenshot"
-          className="rounded-lg shadow-lg"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+                {/* Step 3: Visual Studio Code*/}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-semibold text-[#ffffff]">Step 3: Visual Studio Code</h3>
+                    <p className="text-[#ffffff]">
+                      Create a .js file titled with the relevant name and folder location, and then copy and paste the .js portion of the code into the file and save it.
+                    </p>
+                  </div>
+
+                {/* Step 4: Integration*/}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-semibold text-[#ffffff]">Step 4: Integration</h3>
+                    <p className="text-[#ffffff]">
+                      Now that you've created the proper component, you can integrate it into your main application file or any other component. Below is an example of how to use it:
+                    </p>
+                  </div>
+            </div>
+          </section>
 
 
           {/* Components Section */}
@@ -231,45 +203,8 @@ export default function DocumentationLayout() {
             <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
               <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Components</h2>
               <p className="mb-6 text-[#ffffff]">
-                Here you can find detailed information about the components used
-                in the project.
+                You can customize each component to your liking with ease.
               </p>
-            </div>
-          </section>
-
-          {/* Installation Section */}
-          <section id="installation">
-            <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
-              <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Installation</h2>
-              <p className="mb-6 text-[#ffffff]">
-                Follow these steps to download and install the required components
-                and software:
-              </p>
-              <ul className="list-disc list-inside text-[#ffffff]">
-                <li>Step 1: Download the components from our website.</li>
-                <li>Step 2: Extract the downloaded files.</li>
-                <li>Step 3: Install the necessary dependencies using <code className="bg-gray-800 p-1 rounded">npm install</code>.</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Example Usage Section */}
-          <section id="example-usage">
-            <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
-              <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Example Usage</h2>
-              <p className="mb-6 text-[#ffffff]">
-                Here’s an example of how you can use our Navbar component in your project:
-              </p>
-              <pre className="bg-gray-800 text-white p-4 rounded mb-6">
-                {`import Navbar from 'your-component-path';\n`}
-                {`export default function App() {\n`}
-                {`  return (\n`}
-                {`    <div>\n`}
-                {`      <Navbar />\n`}
-                {`    </div>\n`}
-                {`  );\n`}
-                {`}`}
-              </pre>
             </div>
           </section>
 
