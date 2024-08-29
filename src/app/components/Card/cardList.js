@@ -1,31 +1,35 @@
 import { useState } from "react";
-import Card from "./card";
+import CardOne from './cardOne';
+import CardTwo from './CardTwo'
 import CardOneCode from './snippets/cardOneCode.js'
+import CardTwoCode from './snippets/cardTwoCode.js'
 
 export default function CardList() {
   const cards = [
     {
       id: 1,
-      component: Card,
+      component: CardOne,
       code: CardOneCode,
       props: {
-        logo: "MySite",
-        links: ["Home", "About", "Services", "Contact"],
-        backgroundColor: "bg-blue-600",
-        textColor: "text-white",
-        hoverColor: "hover:text-gray-300",
+        description:"Explore Tailwind CSS",
+        title:"Tailwind Box Component",
+        button:"Learn More",
+        p:"By John Doe",
+        buttonColor:"bg-pink-600",
+        hoverColor:"hover:bg-orange-500",
       },
     },
     {
       id: 2,
-      component: Card,
-      code: navbarTwoCode,
+      component: CardTwo,
+      code: CardTwoCode,
       props: {
-        logo: "YourSite",
-        links: ["Home", "Portfolio", "Contact"],
-        backgroundColor: "bg-gray-800",
-        textColor: "text-white",
-        hoverColor: "hover:text-yellow-300",
+        description:"Explore Tailwind CSS",
+        title:"Tailwind Box Component",
+        button:"Learn More",
+        p:"By John Doe",
+        buttonColor:"bg-pink-600",
+        hoverColor:"hover:bg-orange-500",
       },
     },
   ];

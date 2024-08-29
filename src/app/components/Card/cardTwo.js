@@ -1,21 +1,8 @@
-const cardOneCode = `
-"use client"; // Indicates that this file should be rendered on the client side
-
+"use client"
 import { Component } from "react";
-
-// Define the CardOne component as a class-based React component
-export default class Card extends Component {
+export default class CardTwo extends Component {
   render() {
-    // Destructure props and set default values
-    const { 
-      description = "Default Description", 
-      title = "Default Title", 
-      button = "Click Me", 
-      p = "Default Footer Text", 
-      buttonColor = "bg-indigo-600", 
-      hoverColor = "hover:bg-indigo-500", 
-      focusColor = "focus-visible:outline-indigo-600" 
-    } = this.props;
+    const { description = "Default Description", title = "Default Title", button = "Click Me", p = "Default Footer Text", buttonColor = "bg-indigo-600", hoverColor = "hover:bg-indigo-500", focusColor = "focus-visible:outline-indigo-600" } = this.props;
 
     return (
       <div className="-mt-2 p-2 mr-2 lg:mt-0 gap-x-6 grid lg:grid-flow-col grid-flow-row auto-cols-max justify-center gap-4">
@@ -27,11 +14,12 @@ export default class Card extends Component {
             <p className="text-base font-semibold text-gray-600">{title}</p>
             <a
               href="#"
-              className={\`mt-10 block w-full rounded-md \${buttonColor} px-3 py-2 text-center text-sm font-semibold text-white shadow-sm \${hoverColor} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 \${focusColor}\`}
+              className={`mt-10 block w-full rounded-md ${buttonColor} px-3 py-2 text-center text-sm font-semibold text-white shadow-sm ${hoverColor} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${focusColor}`}
             >
               {button}
             </a>
             <p className="mt-6 text-xs leading-5 text-gray-600 flex flex-row justify-end">
+             
               {p}
             </p>
           </div>
@@ -40,5 +28,3 @@ export default class Card extends Component {
     );
   }
 }
-`;
-export default cardOneCode;

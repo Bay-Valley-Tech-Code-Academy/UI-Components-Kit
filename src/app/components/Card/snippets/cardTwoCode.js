@@ -1,10 +1,10 @@
-const cardOneCode = `
+const cardTwoCode = `
 "use client"; // Indicates that this file should be rendered on the client side
 
 import { Component } from "react";
 
-// Define the CardOne component as a class-based React component
-export default class Card extends Component {
+// Define the Card component as a class-based React component
+export default class CardTwo extends Component {
   render() {
     // Destructure props and set default values
     const { 
@@ -41,4 +41,4 @@ export default class Card extends Component {
   }
 }
 `;
-export default cardOneCode;
+export default cardTwoCode;

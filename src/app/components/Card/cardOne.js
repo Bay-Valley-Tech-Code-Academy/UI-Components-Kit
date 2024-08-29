@@ -1,6 +1,6 @@
 "use client"
 import { Component } from "react";
-export default class Card extends Component {
+export default class CardOne extends Component {
   render() {
     const { description = "Default Description", title = "Default Title", button = "Click Me", p = "Default Footer Text", buttonColor = "bg-indigo-600", hoverColor = "hover:bg-indigo-500", focusColor = "focus-visible:outline-indigo-600" } = this.props;
 
