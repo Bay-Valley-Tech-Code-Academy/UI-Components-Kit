@@ -97,7 +97,7 @@ export default function DocumentationLayout() {
             </div>
           </section>
 
-          {/* Getting Started Section*/}
+          {/* Getting Started Section */}
           <section id="getting-started">
             <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
               <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Getting Started</h2>
