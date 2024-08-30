@@ -1,59 +1,99 @@
 "use client";
 
-import {Component} from "react";
-// import BVTLogo from '../../../../public/images'
+import React, { Component } from "react";
+import Image from "next/image";
 
-export default class CarouselOne extends Component{
-    render() {
-        const {
-        } = this.props;
+export default class CarouselOne extends Component {
+  constructor(props) {
+    super(props);
+    // State to track the current slide index
+    this.state = {
+      currentIndex: 0,
+    };
+  }
 
-        return(
-            
+  // Function to go to the next slide
+  goToNext = () => {
+    this.setState((prevState) => ({
+      currentIndex: (prevState.currentIndex + 1) % this.slides.length,
+    }));
+  };
 
-            <div id="controls-carousel" class="relative w-full" data-carousel="static">
-                {/* <!-- Carousel wrapper --> */}
-                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                    {/* <!-- Item 1 --> */}
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                        <img src="../../../../public/images/bvt_logo.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."></img>
-                    </div>
-                    {/* <!-- Item 2 --> */}
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="../../../../public/images/bvt_logo.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."></img>
-                    </div>
-                    {/* <!-- Item 3 --> */}
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="../../../../public/images/bvt_logo.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."></img>
-                    </div>
-                    {/* <!-- Item 4 --> */}
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="../../../../public/images/bvt_logo.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."></img>
-                    </div>
-                    {/* <!-- Item 5 --> */}
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="../../../../public/images/bvt_logo.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."></img>
-                    </div>
-                </div>
-                {/* <!-- Slider controls --> */}
-                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                        </svg>
-                        <span class="sr-only">Previous</span>
-                    </span>
-                </button>
-                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                        </svg>
-                        <span class="sr-only">Next</span>
-                    </span>
-                </button>
-            </div>
+  // Function to go to the previous slide
+  goToPrevious = () => {
+    this.setState((prevState) => ({
+      currentIndex:
+        prevState.currentIndex === 0
+          ? this.slides.length - 1
+          : prevState.currentIndex - 1,
+    }));
+  };
 
-        );
-    }
+  // Sample images for the carousel (make sure paths are correct)
+  slides = [
+    { src: "/images/bvt_logo.png", alt: "Logo" }, // Ensure this is the correct path
+    { src: "/images/ui-shop-tool-kit.png", alt: "Carousel Image 2" },
+  ];
+
+  render() {
+    const { currentIndex } = this.state;
+
+    return (
+      <div className="relative w-full max-w-lg mx-auto">
+        {/* Carousel wrapper */}
+        <div className="overflow-hidden rounded-lg">
+          <div
+            className="flex transition-transform duration-500"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {this.slides.map((slide, index) => (
+              <div
+                key={index}
+                className="min-w-full h-64 flex-shrink-0 bg-gray-300"
+              >
+                {/* Correctly formatted Image component */}
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  className="w-full h-full object-cover"
+                  width={500}
+                  height={300}
+                  priority
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Previous Button */}
+        <button
+          onClick={this.goToPrevious}
+          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
+        >
+          &lt;
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={this.goToNext}
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
+        >
+          &gt;
+        </button>
+
+        {/* Indicators */}
+        <div className="flex justify-center mt-4">
+          {this.slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => this.setState({ currentIndex: index })}
+              className={`w-3 h-3 mx-1 rounded-full ${
+                currentIndex === index ? "bg-blue-500" : "bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
 }

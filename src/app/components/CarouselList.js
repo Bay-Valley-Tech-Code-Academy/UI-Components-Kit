@@ -1,17 +1,18 @@
 import { useState } from "react";
-import NavbarOne from "./Navbar/navbarOne";
 import NavbarTwo from "./Navbar/navbarTwo";
-import navbarOneCode from "./Navbar/snippets/navbarOneCode";
 import navbarTwoCode from "./Navbar/snippets/navbarTwoCode";
 
 import carouselOne from "./Carousel/carouselOne";
+import carouselOneCode from "./Carousel/snippets/carouselOneCode";
+import logo from "./../../../public/images/bvt_logo.png"
+
 
 export default function CarouselList() {
   const carousels = [
     {
       id: 1,
       component: carouselOne,
-      code: navbarOneCode,
+      code: carouselOneCode,
       props: {
         backgroundColor: "bg-[#FFF8F0]",
       },
