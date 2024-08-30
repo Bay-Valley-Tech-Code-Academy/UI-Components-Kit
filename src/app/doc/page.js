@@ -1,8 +1,10 @@
+import React from 'react';
+import FAQItem from '../components/FAQ/FAQitem';
 import Navbar from "../components/Website/navbar";
 import NavbarOne from "../components/Navbar/navbarOne";
 import NavbarTwo from "../components/Navbar/navbarTwo";
 
-export default function DocumentationLayout() {
+const DocumentationLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -14,7 +16,7 @@ export default function DocumentationLayout() {
       {/* Main Content Area */}
       <div className="flex flex-1">
         {/* Sidebar */}
-        <aside className="w-64 bg-[#333044] rounded-lg shadow-md p-6">
+        <aside className="w-64 bg-[#333044] rounded-lg shadow-md p-6 sticky top-0 h-screen">
           <nav>
             <ul className="space-y-4">
               <li>
@@ -27,7 +29,7 @@ export default function DocumentationLayout() {
               </li>
               <li>
                 <a
-                  href="#Overview"
+                  href="#overview"
                   className="text-indigo-200 hover:text-orange-400"
                 >
                   Overview
@@ -36,11 +38,11 @@ export default function DocumentationLayout() {
               <li>
                 <a
                   href="#prerequisites"
-                  className="text-indigo-200 hover:text-orange-400">
+                  className="text-indigo-200 hover:text-orange-400"
+                >
                   Prerequisites
                 </a>
               </li>
-              <li></li>
               <li>
                 <a
                   href="#getting-started"
@@ -67,7 +69,7 @@ export default function DocumentationLayout() {
               </li>
               <li>
                 <a
-                  href="#faq"
+                  href="#FAQ"
                   className="text-indigo-200 hover:text-orange-400"
                 >
                   FAQ
@@ -106,47 +108,39 @@ export default function DocumentationLayout() {
               </p>
 
               {/* Step 1: Components */}
-              <div className="mb-6">
-                <h3 className="text-2xl font-semibold text-[#ffffff]">Step 1: Components</h3>
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-[#ffffff] mb-6">Step 1: Components</h3>
                 <p className="text-[#ffffff]">
                   First, head over to the components page and click on a component category that you are wanting to add to your website.
                 </p>
-                <div className="flex justify-center mt-4">
-                </div>
               </div>
 
               {/* Step 2: Installation */}
-              <div className="mb-6">
-                <h3 className="text-2xl font-semibold text-[#ffffff]">Step 2: Installation</h3>
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-[#ffffff] mb-6">Step 2: Installation</h3>
                 <p className="text-[#ffffff]">
                   Once you find a component template you like, click the "code" button to reveal the code for that template, and head over to your source code editor.
                 </p>
-                <div className="flex justify-center mt-4">
-                </div>
               </div>
 
-              {/* Step 3: Visual Studio Code */}
-              <div className="mb-6">
-                <h3 className="text-2xl font-semibold text-[#ffffff]">Step 3: Visual Studio Code</h3>
+              {/* Step 3: Integration */}
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-[#ffffff] mb-6">Step 3: Integration</h3>
                 <p className="text-[#ffffff]">
                   Create a .js file titled with the relevant name in the folder location, and then copy and paste the .js portion of the code into the file and save it.
                 </p>
-                <div className="flex justify-center mt-4">
-                </div>
               </div>
 
-              {/* Step 4: Integration */}
-              <div className="mb-6">
-                <h3 className="text-2xl font-semibold text-[#ffffff]">Step 4: Integration</h3>
-                <p className="text-[#ffffff] mb-8">
+              {/* Step 4: Import */}
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-[#ffffff] mb-6">Step 4: Import</h3>
+                <p className="text-[#ffffff] mb-6">
                   Now that you've created the proper component, you can import it into your main application file or any other component. Below is an example of how to use it:
                 </p>
                 <img
-                  src="\images\docs\step4.png"
+                  src="/images/docs/step4.png"
                   alt="Screenshot of Step 4"
                 />
-                <div className="flex justify-center mt-4">
-                </div>
               </div>
             </div>
           </section>
@@ -166,14 +160,15 @@ export default function DocumentationLayout() {
                 hoverColor="hover:text-purple-600"
               />
               <img
-                src="\images\docs\navbarOne_snip.png"
+                src="/images/docs/navbarOne_snip.png"
                 alt="Screenshot of navbarOne_snip"
+                className="mt-6"
               />
               <p className="text-[#ffffff] mt-6">
                 The above example demonstrates how you can use the `NavbarOne` component. You can customize the logo, links, colors, and more to fit your needs.
               </p>
-              <p className="text-[#ffffff] mt-6">
-                An example with different customization options:
+              <p className="text-[#ffffff] mt-6 mb-6">
+                An example below with different customization options:
               </p>
               <NavbarTwo
                 logo="YourSite"
@@ -183,8 +178,9 @@ export default function DocumentationLayout() {
                 hoverColor="hover:text-yellow-300"
               />
               <img
-                src="\images\docs\navbarTwo_snip.PNG"
+                src="/images/docs/navbarTwo_snip.png"
                 alt="Screenshot of navbarTwo_snip"
+                className="mt-6"
               />
             </div>
           </section>
@@ -203,101 +199,91 @@ export default function DocumentationLayout() {
           <section id="faq">
             <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
               <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">FAQ</h2>
-              <div className="space-y-12 text-[#ffffff]">
+              <div className="space-y-6 text-[#ffffff]">
 
-                {/* FAQ 1 */}
-                <div>
-                  <h3 className="text-2xl font-semibold">How do I install the components in my project?</h3>
-                  <p>
-                    To install our components, you can simply copy the provided code snippets directly into your project files. Ensure that the required dependencies, such as React and Tailwind CSS, are already installed in your project. You can then import the component into your files and start using it immediately.
-                  </p>
+                <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                  <FAQItem
+                    question="How do I install the components in my project?"
+                    answer="To install our components, you can simply copy the provided code snippets directly into your project files. Ensure that the required dependencies, such as React and Tailwind CSS, are already installed in your project. You can then import the component into your files and start using it immediately."
+                  />
                 </div>
 
-                {/* FAQ 2 */}
-                <div>
-                  <h3 className="text-2xl font-semibold">Can I customize the components to match my website's design?</h3>
-                  <p>
-                    Absolutely! Our components are built with flexibility in mind. You can easily customize aspects like colors, fonts, and layout by passing different props to the components or by modifying the provided Tailwind CSS classes. Check out the examples in our documentation to see how to make these adjustments.
-                  </p>
+                <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                  <FAQItem
+                    question="Can I customize the components to match my website's design?"
+                    answer="Absolutely! Our components are built with flexibility in mind. You can easily customize aspects like colors, fonts, and layout by passing different props to the components or by modifying the provided Tailwind CSS classes. Check out the examples in our documentation to see how to make these adjustments."
+                  />
                 </div>
 
-                {/* FAQ 3 */}
-                <div>
-                  <h3 className="text-2xl font-semibold">What if I need a component that’s not available in your library?</h3>
-                  <p>
-                    If you need a specific component that isn’t included in our library, you have a few options. You can either create the component yourself using our existing components as a reference, or you can reach out to us with a feature request. We're continually updating our library based on user feedback.
-                  </p>
+                <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                  <FAQItem
+                    question="What if I need a component that’s not available in your library?"
+                    answer="If you need a specific component that isn’t included in our library, you have a few options. You can either create the component yourself using our existing components as a reference, or you can reach out to us with a feature request. We're continually updating our library based on user feedback."
+                  />
                 </div>
 
-                {/* FAQ 4 */}
-                <div>
-                  <h3 className="text-2xl font-semibold">How do I integrate a component into an existing page on my website?</h3>
-                  <p>
-                    To integrate a component into an existing page, first, import the component at the top of your file. Then, insert the component within the JSX where you want it to appear on the page. For example:
-                  </p>
-                  <pre className="bg-gray-800 p-4 rounded text-white">
-                    <code>{`import NavbarOne from './components/NavbarOne';
-
-      function HomePage() {
-        return (
-          <div>
-            <NavbarOne 
-            logo="MySite" 
-            links={["Home", "About", "Services", "Contact"]} />
-            {/* Other content */}
-          </div>
-        );
-      }`}</code>
-                  </pre>
-                  <p>
-                    This example shows how to add the `NavbarOne` component to your homepage. You can do the same with any of our components.
-                  </p>
+                <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                  <FAQItem
+                    question="How do I integrate a component into an existing page on my website?"
+                    answer="To integrate a component into an existing page, first, import the component at the top of your file. Then, insert the component within the JSX where you want it to appear on the page. For example:"
+                    codeSnippet={`import NavbarOne from './components/NavbarOne';\n
+function HomePage() {
+  return (
+    <div>
+      <NavbarOne
+        logo="MySite"
+        links={["Home", "About", "Services", "Contact"]}
+      />
+      {/* Other content */}
+    </div>
+  );
+}`                              }
+                  />
                 </div>
 
-                {/* FAQ 5 */}
-                <div>
-                  <h3 className="text-2xl font-semibold">What if I encounter an issue or bug while using a component?</h3>
-                  <p>
-                    If you encounter any issues or bugs, please report them to us through our GitHub repository or contact our support team directly. Provide as much detail as possible, including the code you’re using and the specific issue you’re facing. We’ll work to resolve the issue promptly.
-                  </p>
+                <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                  <FAQItem
+                    question="What if I encounter an issue or bug while using a component?"
+                    answer="If you encounter any issues or bugs, please report them to us through our GitHub repository or contact our support team directly. Provide as much detail as possible, including the code you’re using and the specific issue you’re facing. We’ll work to resolve the issue promptly."
+                  />
                 </div>
 
-                {/* FAQ 6 */}
-                <div>
-                  <h3 className="text-2xl font-semibold">Can I use these components with other front-end frameworks or libraries?</h3>
-                  <p>
-                    Our components are designed for React and may require modifications to work with other frameworks like Angular or Vue. However, since our components are built with standard HTML, CSS (using Tailwind), and JavaScript, adapting them should be straightforward with some tweaks.
-                  </p>
+                <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                  <FAQItem
+                    question="Can I use these components with other front-end frameworks or libraries?"
+                    answer="Our components are designed for React and may require modifications to work with other frameworks like Angular or Vue. However, since our components are built with standard HTML, CSS (using Tailwind), and JavaScript, adapting them should be straightforward with some tweaks."
+                  />
                 </div>
 
-                {/* FAQ 7 */}
-                <div>
-                  <h3 className="text-2xl font-semibold">How do I update a component if you release a new version?</h3>
-                  <p>
-                    When we release updates, you can easily integrate the latest version of a component by replacing the old code with the updated snippet from our documentation. Ensure to review any release notes for breaking changes or new features.
-                  </p>
+                <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                  <FAQItem
+                    question="How do I update a component if you release a new version?"
+                    answer="When we release updates, you can easily integrate the latest version of a component by replacing the old code with the updated snippet from our documentation. Ensure to review any release notes for breaking changes or new features."
+                  />
                 </div>
 
-                {/* FAQ 8 */}
-                <div>
-                  <h3 className="text-2xl font-semibold">Are the components responsive and mobile-friendly?</h3>
-                  <p>
-                    Yes, all of our components are designed to be responsive and mobile-friendly out of the box. They utilize Tailwind CSS’s responsive design utilities, ensuring they look great on devices of all sizes.
-                  </p>
+                <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                  <FAQItem
+                    question="Are the components responsive and mobile-friendly?"
+                    answer="Yes, all of our components are designed to be responsive and mobile-friendly out of the box. They utilize Tailwind CSS’s responsive design utilities, ensuring they look great on devices of all sizes."
+                  />
                 </div>
 
-                {/* FAQ 9 */}
-                <div>
-                  <h3 className="text-2xl font-semibold">Do I need to include any additional CSS or JavaScript files?</h3>
-                  <p>
-                    As long as you have Tailwind CSS and React set up in your project, you don’t need to include any additional CSS or JavaScript files to use our components. If a component requires specific assets, it will be mentioned in the documentation.
-                  </p>
+                <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                  <FAQItem
+                    question="Do I need to include any additional CSS or JavaScript files?"
+                    answer="As long as you have Tailwind CSS and React set up in your project, you don’t need to include any additional CSS or JavaScript files to use our components. If a component requires specific assets, it will be mentioned in the documentation."
+                  />
                 </div>
+
               </div>
             </div>
           </section>
+
         </main>
       </div>
     </div>
   );
-}
+};
+
+export default DocumentationLayout;
