@@ -85,13 +85,6 @@ export default function DocumentationLayout() {
                 Welcome to the documentation for our project. This section
                 provides an overview of what you can find in the documentation.
               </p>
-            </div>
-          </section>
-
-          {/* Overview Section */}
-          <section id="Overview">
-            <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
-              <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Overview</h2>
               <p className="mb-6 text-[#ffffff]">
                 This is a Next.js project bootstrapped with{" "}
                 <code>create-next-app</code>.
@@ -230,7 +223,7 @@ export default function DocumentationLayout() {
             <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
               <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Components</h2>
               <p className="mb-6 text-[#ffffff]">
-                You can customize each component to your liking with ease.
+                You can customize each component with ease.
               </p>
             </div>
           </section>
