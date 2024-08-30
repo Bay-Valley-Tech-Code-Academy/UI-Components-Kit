@@ -1,8 +1,8 @@
 "use client";
 
-import Navbar from "../components/navbar";
-import ComponentCard from "../components/componentCard";
-import NavbarList from "../components/navbarList";
+import Navbar from "../components/Website/navbar";
+import ComponentCard from "../components/Website/componentCard";
+import NavbarList from "../components/Navbar/navbarList";
 import { useState } from "react";
 
 export default function Component() {
