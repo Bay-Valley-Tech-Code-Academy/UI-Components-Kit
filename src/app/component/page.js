@@ -13,6 +13,7 @@ export default function Component() {
     { title: "Footer", content: "" },
     { title: "Promo", content: "" },
     { title: "Card", content: "" },
+    { title: "Button", content: ""},
   ];
 
   const handleCardClick = (content) => {
