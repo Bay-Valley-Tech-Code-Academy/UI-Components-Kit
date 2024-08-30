@@ -1,11 +1,7 @@
 import { useState } from "react";
-import NavbarTwo from "./Navbar/navbarTwo";
-import navbarTwoCode from "./Navbar/snippets/navbarTwoCode";
 
-import carouselOne from "./Carousel/carouselOne";
-import carouselOneCode from "./Carousel/snippets/carouselOneCode";
-import logo from "./../../../public/images/bvt_logo.png"
-
+import carouselOne from "./carouselOne";
+import carouselOneCode from "./snippets/carouselOneCode";
 
 export default function CarouselList() {
   const carousels = [
@@ -15,18 +11,6 @@ export default function CarouselList() {
       code: carouselOneCode,
       props: {
         backgroundColor: "bg-[#FFF8F0]",
-      },
-    },
-    {
-      id: 2,
-      component: NavbarTwo,
-      code: navbarTwoCode,
-      props: {
-        logo: "YourSite",
-        links: ["Home", "Portfolio", "Contact"],
-        backgroundColor: "bg-gray-800",
-        textColor: "text-white",
-        hoverColor: "hover:text-yellow-300",
       },
     },
   ];

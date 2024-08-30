@@ -1,9 +1,9 @@
 "use client";
 
-import Navbar from "../components/navbar";
-import ComponentCard from "../components/componentCard";
-import NavbarList from "../components/navbarList";
-import CarouselList from "../components/CarouselList";
+import Navbar from "../components/Website/navbar";
+import ComponentCard from "../components/Website/componentCard";
+import NavbarList from "../components/Navbar/navbarList";
+import CarouselList from "../components/Carousel/CarouselList";
 import { useState } from "react";
 
 import BVTLogo from '../../../public/images/bvt_logo.png'

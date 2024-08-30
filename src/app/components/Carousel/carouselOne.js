@@ -1,25 +1,38 @@
 "use client";
 
 import React, { Component } from "react";
-import Image from "next/image";
+import Image from "next/image"; // Import Next.js Image component
 
 export default class CarouselOne extends Component {
   constructor(props) {
     super(props);
-    // State to track the current slide index
     this.state = {
-      currentIndex: 0,
+      currentIndex: 0, // Initial slide index
     };
   }
 
-  // Function to go to the next slide
+  // Array of image data (source paths and alt texts)
+  slides = [
+    { src: "/images/bvt_logo.png", alt: "Logo Image" },
+    { src: "/images/ui-shop-tool-kit.png", alt: "Second Image" },
+  ];
+
+  componentDidMount() {
+    // Automatically go to the next slide every 3 seconds (3000 ms)
+    this.interval = setInterval(this.goToNext, 3000);
+  }
+
+  componentWillUnmount() {
+    // Clear interval when the component is unmounted to prevent memory leaks
+    clearInterval(this.interval);
+  }
+
   goToNext = () => {
     this.setState((prevState) => ({
       currentIndex: (prevState.currentIndex + 1) % this.slides.length,
     }));
   };
 
-  // Function to go to the previous slide
   goToPrevious = () => {
     this.setState((prevState) => ({
       currentIndex:
@@ -29,12 +42,6 @@ export default class CarouselOne extends Component {
     }));
   };
 
-  // Sample images for the carousel (make sure paths are correct)
-  slides = [
-    { src: "/images/bvt_logo.png", alt: "Logo" }, // Ensure this is the correct path
-    { src: "/images/ui-shop-tool-kit.png", alt: "Carousel Image 2" },
-  ];
-
   render() {
     const { currentIndex } = this.state;
 
@@ -43,7 +50,7 @@ export default class CarouselOne extends Component {
         {/* Carousel wrapper */}
         <div className="overflow-hidden rounded-lg">
           <div
-            className="flex transition-transform duration-500"
+            className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {this.slides.map((slide, index) => (
@@ -51,7 +58,6 @@ export default class CarouselOne extends Component {
                 key={index}
                 className="min-w-full h-64 flex-shrink-0 bg-gray-300"
               >
-                {/* Correctly formatted Image component */}
                 <Image
                   src={slide.src}
                   alt={slide.alt}
