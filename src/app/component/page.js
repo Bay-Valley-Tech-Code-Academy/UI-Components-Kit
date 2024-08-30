@@ -1,10 +1,12 @@
 "use client";
 
-import Navbar from "../components/navbar";
-import ComponentCard from "../components/componentCard";
-import NavbarList from "../components/navbarList";
-import CardList from "../components/Card/cardList";
+import Navbar from "../components/Website/navbar";
+import ComponentCard from "../components/Website/componentCard";
+import NavbarList from "../components/Navbar/navbarList";
+import CarouselList from "../components/Carousel/CarouselList";
 import { useState } from "react";
+
+import BVTLogo from '../../../public/images/bvt_logo.png'
 
 export default function Component() {
   const [selectedContent, setSelectedContent] = useState(null);
@@ -12,8 +14,9 @@ export default function Component() {
   const cards = [
     { title: "Navbar", content: <NavbarList /> },
     { title: "Footer", content: "" },
-    { title: "Carousel", content: "" },
-    { title: "Card", content: <CardList/> },
+    { title: "Promo", content: "" },
+    { title: "Card", content: "" },
+    { title: "Carousel", content: <CarouselList/>},
   ];
 
   const handleCardClick = (content) => {
