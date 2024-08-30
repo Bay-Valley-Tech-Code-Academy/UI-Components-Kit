@@ -1,10 +1,10 @@
 import { useState } from "react";
-import NavbarOne from "./Navbar/navbarOne";
-import NavbarTwo from "./Navbar/navbarTwo";
-import NavbarThree from "./Navbar/navbarThree";
-import navbarOneCode from "./Navbar/snippets/navbarOneCode";
-import navbarTwoCode from "./Navbar/snippets/navbarTwoCode";
-import navbarThreeCode from "./Navbar/snippets/navbarThreeCode";
+import NavbarOne from "./navbarOne";
+import NavbarTwo from "./navbarTwo";
+import NavbarThree from "./navbarThree";
+import navbarOneCode from "./snippets/navbarOneCode";
+import navbarTwoCode from "./snippets/navbarTwoCode";
+import navbarThreeCode from "./snippets/navbarThreeCode";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
