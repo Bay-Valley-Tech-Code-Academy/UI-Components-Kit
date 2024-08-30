@@ -4,6 +4,7 @@ import Navbar from "../components/Website/navbar";
 import ComponentCard from "../components/Website/componentCard";
 import NavbarList from "../components/Navbar/navbarList";
 import CarouselList from "../components/Carousel/CarouselList";
+import ButtonList from "../components/Button/buttonList";
 import { useState } from "react";
 
 import BVTLogo from '../../../public/images/bvt_logo.png'
@@ -16,7 +17,7 @@ export default function Component() {
     { title: "Footer", content: "" },
     { title: "Promo", content: "" },
     { title: "Card", content: "" },
-    { title: "Button", content: ""},
+    { title: "Button", content: <ButtonList />},
     { title: "Carousel", content: <CarouselList/>},
   ];
 
