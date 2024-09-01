@@ -2,6 +2,7 @@
 
 import Navbar from "../components/Website/navbar";
 import ComponentCard from "../components/Website/componentCard";
+import AiModel from "../components/Website/aiModel";
 import NavbarList from "../components/Navbar/navbarList";
 import CarouselList from "../components/Carousel/CarouselList";
 import { useState } from "react";
@@ -10,6 +11,7 @@ import BVTLogo from '../../../public/images/bvt_logo.png'
 
 export default function Component() {
   const [selectedContent, setSelectedContent] = useState(null);
+  const [open, setOpen] = useState(false);
 
   const cards = [
     { title: "Navbar", content: <NavbarList /> },
@@ -24,7 +26,7 @@ export default function Component() {
   };
 
   const openAiForm = () => {
-
+    setOpen(true);
   };
 
   return (
@@ -59,6 +61,7 @@ export default function Component() {
       <div className="p-6 fixed bottom-0 right-0">
         <img src="/images/ai.png" className="w-12 cursor-pointer" onClick={() => openAiForm()} alt="ai" />
       </div>
+      <AiModel open = {open} setOpen = {setOpen}/>
     </div>
   );
 }
