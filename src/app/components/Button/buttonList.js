@@ -3,6 +3,10 @@ import ButtonOne from './buttonOne';
 import ButtonTwo from './buttonTwo';
 import buttonOneCode from './snippets/buttonOneCode';
 import buttonTwoCode from './snippets/buttonTwoCode'
+import ButtonThree from './buttonThree';
+import buttonThreeCode from './snippets/buttonThreeCode';
+import ButtonFour from './buttonFour';
+import buttonFourCode from './snippets/buttonFourCode';
 
 export default function ButtonList() {
   const buttons = [
@@ -11,8 +15,9 @@ export default function ButtonList() {
       component: ButtonOne,
       code: buttonOneCode,
       props: {
-        text: "Button1",
-        textColor: "bg-blue-400",
+        text: "Purple to Blue",
+        textColor: "text-white",
+        bgColor: "bg-gradient-to-r from-[#EE86FF] to-[#009DB2]"
       },
     },
     {
@@ -20,8 +25,29 @@ export default function ButtonList() {
       component: ButtonTwo,
       code: buttonTwoCode,
       props: {
-        text: "Button2",
-        textColor: "bg-red-300",
+        text: "Blue to Green",
+        textColor: "text-white",
+        bgColor: "bg-gradient-to-r from-[#054FDF] to-[#7AFFBF]",
+      },
+    },
+    {
+      id: 3,
+      component: ButtonThree,
+      code: buttonThreeCode,
+      props: {
+        text: "Pink to Blue",
+        textColor: "text-white",                            
+        bgColor: "bg-gradient-to-r from-[#FF008A] to-[#251CC0]",
+      },
+    },
+    {
+      id: 4,
+      component: ButtonFour,
+      code: buttonFourCode,
+      props: {
+        text: "Pink to Blue",
+        textColor: "text-black",
+        bgColor: "bg-white",
       },
     },
   ];
@@ -29,7 +55,7 @@ export default function ButtonList() {
   const [previewStates, setPreviewStates] = useState(buttons.map(()=> true));
 
   const togglePreview = (index) => {
-    setPreviewStates((previewStates) => 
+    setPreviewStates((prevStates) => 
       prevStates.map((state, i) => (i === index ? !state: state))
     );
   }
