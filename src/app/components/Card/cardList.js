@@ -1,8 +1,10 @@
 import { useState } from "react";
 import CardOne from './cardOne';
 import CardTwo from './cardTwo';
-import CardOneCode from './snippets/cardOneCode.js'
-import CardTwoCode from './snippets/cardTwoCode.js'
+import CardOneCode from './snippets/cardOneCode.js';
+import CardTwoCode from './snippets/cardTwoCode.js';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function CardList() {
   const cards = [
@@ -11,12 +13,11 @@ export default function CardList() {
       component: CardOne,
       code: CardOneCode,
       props: {
-        description:"Tailwind Box Component",
-        title:"Explore Tailwind CSS",
-        button:"Learn More",
-        author:"John Doe",
-        buttonColor:"bg-pink-600",
-        hoverColor:"hover:bg-orange-500",
+        name:"Alisson Ross",
+        userIconColor:"stroke-pink-400",
+        emailIconColor:"stroke-purple-400",
+        phoneIconColor:"stroke-purple-400",
+        chatIconColor:"stroke-purple-400",
         width:"w-50"
       },
     },
@@ -68,9 +69,13 @@ export default function CardList() {
               {previewStates[index] ? (
                 <CardComponent {...card.props} />
               ) : (
-                <pre className="text-white p-4">
-                  <code>{card.code}</code>
-                </pre>
+                <SyntaxHighlighter
+                  language="javascript" // or other languages if needed
+                  style={nightOwl} // Choose a theme that you prefer
+                  className="text-white"
+                >
+                  {card.code}
+                </SyntaxHighlighter>
               )}
             </div>
           </div>
