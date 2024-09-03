@@ -46,8 +46,8 @@ export default function ButtonList() {
       code: buttonFourCode,
       props: {
         text: "Pink to Blue",
-        textColor: "text-black",
-        bgColor: "bg-white",
+        textColor: "text-white",
+        bgColor: "bg-gradient-to-br from-purple-500 to-pink-500",
       },
     },
   ];

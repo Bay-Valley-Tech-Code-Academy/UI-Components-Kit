@@ -13,7 +13,7 @@ export default class ButtonTwo extends Component {
     return (
         <div>
             <button
-              className={`${textColor} ${bgColor} rounded-md p-3 outline`}
+              className={`${textColor} ${bgColor} rounded-md p-3`}
             >
               {text}
             </button>

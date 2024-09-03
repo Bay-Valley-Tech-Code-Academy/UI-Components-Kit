@@ -12,9 +12,10 @@ export default class ButtonFour extends Component {
 
     return (
         <button
-          className={`${textColor} ${bgColor} rounded-md p-3 ring-offset-2 ring-offset-gradient-to-r ring-offset-blue-500 ring-offset-green-500`}
-        >
-          {text}
+          className={`${textColor} rounded-md p-3 overflow-hidden group ${bgColor} group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800`}>
+          <span class="relative px-6 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-lg group-hover:bg-opacity-0">
+            {text}
+          </span>
         </button>
     );
   }
