@@ -7,6 +7,8 @@ import ButtonThree from './buttonThree';
 import buttonThreeCode from './snippets/buttonThreeCode';
 import ButtonFour from './buttonFour';
 import buttonFourCode from './snippets/buttonFourCode';
+import ButtonFive from './buttonFive';
+import buttonFiveCode from './snippets/buttonFiveCode';
 
 export default function ButtonList() {
   const buttons = [
@@ -48,6 +50,21 @@ export default function ButtonList() {
         text: "Pink to Blue",
         textColor: "text-white",
         bgColor: "bg-gradient-to-br from-purple-500 to-pink-500",
+      },
+    },
+    {
+      id: 5,
+      component: ButtonFive,
+      code: buttonFiveCode,
+      props: {
+        text: "Dropdown",
+        textColor: "text-white",
+        bgColor: "bg-blue-500",
+        items: [
+          { label: "Item1" },
+          { label: "Item2" },
+          { label: "Item3" },
+        ]
       },
     },
   ];
