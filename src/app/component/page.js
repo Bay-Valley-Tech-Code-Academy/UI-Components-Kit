@@ -2,6 +2,7 @@
 
 import Navbar from "../components/Website/navbar";
 import ComponentCard from "../components/Website/componentCard";
+import AiModel from "../components/Website/aiModel";
 import NavbarList from "../components/Navbar/navbarList";
 import CarouselList from "../components/Carousel/CarouselList";
 import ButtonList from "../components/Button/buttonList";
@@ -12,6 +13,7 @@ import BVTLogo from '../../../public/images/bvt_logo.png'
 
 export default function Component() {
   const [selectedContent, setSelectedContent] = useState(null);
+  const [open, setOpen] = useState(false);
 
   const cards = [
     { title: "Navbar", content: <NavbarList /> },
@@ -24,6 +26,10 @@ export default function Component() {
 
   const handleCardClick = (content) => {
     setSelectedContent(content);
+  };
+
+  const openAiForm = () => {
+    setOpen(true);
   };
 
   return (
@@ -45,29 +51,20 @@ export default function Component() {
       ) : (
         <div className="flex flex-col p-6">
           <div>
-          <button
-            className="text-[#180728] p-3 text-lg bg-[#FF7D61] rounded-md md:text-xl hover:bg-[#CC4426] m-1 md:m-4 ml-auto block"
-            onClick={() => handleCardClick(null)}
-          >
-            Back
-          </button>
+            <button
+              className="text-[#180728] p-3 text-lg bg-[#FF7D61] rounded-md md:text-xl hover:bg-[#CC4426] m-1 md:m-4 ml-auto block"
+              onClick={() => handleCardClick(null)}
+            >
+              Back
+            </button>
           </div>
-          <div className="w-full">
-            {selectedContent}
-          </div>
+          <div className="w-full">{selectedContent}</div>
         </div>
       )}
-      {/* Grid of Boxes
-       <div className="-mt-2 p-2 mr-2 lg:mt-0 gap-x-6 grid lg:grid-flow-col grid-flow-row auto-cols-max justify-center gap-4">
-        <Box
-          description="Explore Tailwind CSS"
-          title="Tailwind Box Component"
-          button="Learn More"
-          p="By John Doe"
-          buttonColor="bg-pink-600"
-          hoverColor="hover:bg-orange-500"
-        />
-      </div> */}
+      <div className="p-6 fixed bottom-0 right-0">
+        <img src="/images/ai.png" className="w-12 cursor-pointer" onClick={() => openAiForm()} alt="ai" />
+      </div>
+      <AiModel open = {open} setOpen = {setOpen}/>
     </div>
   );
 }

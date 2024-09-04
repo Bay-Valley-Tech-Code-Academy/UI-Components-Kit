@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 import Image from "next/image"; // Import Next.js Image component
 
-export default class CarouselOne extends Component {
+export default class CarouselTwo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,16 +16,6 @@ export default class CarouselOne extends Component {
     { src: "/images/bvt_logo.png", alt: "Logo Image" },
     { src: "/images/ui-shop-tool-kit.png", alt: "Second Image" },
   ];
-
-  componentDidMount() {
-    // Automatically go to the next slide every 3 seconds (3000 ms)
-    this.interval = setInterval(this.goToNext, 3000);
-  }
-
-  componentWillUnmount() {
-    // Clear interval when the component is unmounted to prevent memory leaks
-    clearInterval(this.interval);
-  }
 
   goToNext = () => {
     this.setState((prevState) => ({
@@ -50,7 +40,7 @@ export default class CarouselOne extends Component {
         {/* Carousel wrapper */}
         <div className="overflow-hidden rounded-lg">
           <div
-            className="flex transition-transform duration-700 ease-in-out"
+            className="flex transition-transform duration-200 ease-linear"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {this.slides.map((slide, index) => (
@@ -75,7 +65,10 @@ export default class CarouselOne extends Component {
           onClick={this.goToPrevious}
           className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
         >
-          &lt;
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
+            </svg>
+
         </button>
 
         {/* Next Button */}
@@ -83,7 +76,10 @@ export default class CarouselOne extends Component {
           onClick={this.goToNext}
           className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
         >
-          &gt;
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+            </svg>
+
         </button>
 
         {/* Indicators */}
@@ -92,8 +88,8 @@ export default class CarouselOne extends Component {
             <button
               key={index}
               onClick={() => this.setState({ currentIndex: index })}
-              className={`w-3 h-3 mx-1 rounded-full ${
-                currentIndex === index ? "bg-blue-500" : "bg-gray-300"
+              className={`w-3 h-3 mx-1 ${
+                currentIndex === index ? "bg-green-500" : "bg-white"
               }`}
             />
           ))}

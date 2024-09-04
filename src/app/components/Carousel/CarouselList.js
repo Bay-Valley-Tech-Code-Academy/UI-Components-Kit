@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import carouselOne from "./carouselOne";
 import carouselOneCode from "./snippets/carouselOneCode";
+import carouselTwo from "./carouselTwo";
+import carouselTwoCode from "./snippets/carouselTwoCode";
 
 export default function CarouselList() {
   const carousels = [
@@ -9,9 +11,11 @@ export default function CarouselList() {
       id: 1,
       component: carouselOne,
       code: carouselOneCode,
-      props: {
-        backgroundColor: "bg-[#FFF8F0]",
-      },
+    },
+    {
+      id: 2,
+      component: carouselTwo,
+      code: carouselTwoCode,
     },
   ];
 
@@ -42,7 +46,7 @@ export default function CarouselList() {
               </button>
             </div>
             <div
-              className={`w-full h-96 overflow-y-scroll ${previewStates[index] ? "bg-[#523B82]" : "bg-[#1e293b]"}`}
+              className={`w-full h-96 overflow-auto ${previewStates[index] ? "" : "bg-[#1e293b]"}`}
             >
               {previewStates[index] ? (
                 <CarouselComponent {...carousel.props} />

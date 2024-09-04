@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.prose {
+    --code-bg: #000000; /* Dark background for code blocks */
+    --code-border: #3b4252; /* Darker border color for code blocks */
+    --inline-code-bg: #000000; /* Slightly darker background for inline code */
+    --inline-code-text: #ffffff; /* Light text color for inline code */
+    --code-text: #ffffff; /* Light text color for code blocks */
+  }
+  
+  .prose pre {
+    background-color: var(--code-bg); /* Dark background */
+    color: var(--code-text); /* Light text color */
+    border-radius: 0.375rem; /* Rounded corners */
+    padding: 1rem; /* Padding */
+    border: 1px solid var(--code-border); /* Darker border color */
+    overflow-x: auto; /* Horizontal scroll for long lines */
+    font-family: 'Fira Code', monospace; /* Monospace font */
+  }
+
+  .prose pre code {
+    background-color: var(--code-bg); /* Dark background */
+  }
+  
+  .prose code {
+    background-color: var(--inline-code-bg); /* Dark background for inline code */
+    color: var(--inline-code-text); /* Light text color for inline code */
+    padding: 0.1rem 0.2rem; /* Padding for inline code */
+    border-radius: 0.2rem; /* Rounded corners */
+  }
