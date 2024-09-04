@@ -1,6 +1,6 @@
 import React from 'react';
 import FAQItem from '../components/Documentation/FAQitem';
-import GetStarted from '../components/Documentation/GetStarteditem';
+import GetStarteditem from '../components/Documentation/GetStarteditem';
 import Navbar from "../components/Website/navbar";
 import NavbarOne from "../components/Navbar/navbarOne";
 import NavbarTwo from "../components/Navbar/navbarTwo";
@@ -43,8 +43,8 @@ const DocumentationLayout = () => {
                 </a>
               </li>
               <li>
-                <a href="#components" className="text-indigo-200 hover:text-orange-400">
-                  Components
+                <a href="#customizing-components" className="text-indigo-200 hover:text-orange-400">
+                  Customizing Components
                 </a>
               </li>
               <li>
@@ -135,10 +135,10 @@ const DocumentationLayout = () => {
             </div>
           </section>
 
-          {/* Components Section */}
-          <section id="components">
+          {/* Customizing Components Section */}
+          <section id="customizing-components">
             <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
-              <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Components</h2>
+              <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Customizing Components</h2>
               <p className="mb-6 text-[#ffffff]">
                 Once you have successfully integrated a component into your project, you can customize each component with ease.
               </p>
