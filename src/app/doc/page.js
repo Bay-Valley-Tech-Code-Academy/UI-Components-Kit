@@ -1,5 +1,6 @@
 import React from 'react';
-import FAQItem from '../components/FAQ/FAQitem';
+import FAQItem from '../components/Documentation/FAQitem';
+import GetStarted from '../components/Documentation/getStarted';
 import Navbar from "../components/Website/navbar";
 import NavbarOne from "../components/Navbar/navbarOne";
 import NavbarTwo from "../components/Navbar/navbarTwo";
@@ -7,19 +8,6 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const DocumentationLayout = () => {
-  const codeSnippet = `import NavbarOne from './components/NavbarOne';\n
-function HomePage() {
-  return (
-    <div>
-      <NavbarOne
-        logo="MySite"
-        links={["Home", "About", "Services", "Contact"]}
-      />
-      {/* Other content */}
-    </div>
-  );
-}`;
-
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -80,6 +68,7 @@ function HomePage() {
 
         {/* Main Content */}
         <main className="flex-1 p-6 space-y-6">
+
           {/* Introduction Section */}
           <section id="introduction">
             <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
@@ -102,45 +91,36 @@ function HomePage() {
           <section id="getting-started">
             <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
               <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Getting Started</h2>
-              <p className="mb-6 text-[#ffffff]">
-                This section shows the steps of how to properly integrate our components into your project.
-              </p>
 
               {/* Step 1: Components */}
-              <div className="mb-8">
-                <h3 className="text-2xl font-semibold text-[#ffffff] mb-6">Step 1: Components</h3>
-                <p className="text-[#ffffff]">
-                  First, head over to the components page and click on a component category that you are wanting to add to your website.
-                </p>
-              </div>
+              <GetStarted
+                subtitle="Step 1: Components"
+                body="First, head over to the components page and click on a component category that you are wanting to add to your website."
+              />
 
               {/* Step 2: Installation */}
-              <div className="mb-8">
-                <h3 className="text-2xl font-semibold text-[#ffffff] mb-6">Step 2: Installation</h3>
-                <p className="text-[#ffffff]">
-                  Once you find a component template you like, click the "code" button to reveal the code for that template, and head over to your source code editor.
-                </p>
-              </div>
+              <GetStarted
+                subtitle="Step 2: Installation"
+                body="Once you find a component template you like, click the 'code' button to reveal the code for that template, and head over to your source code editor."
+              />
 
               {/* Step 3: Integration */}
-              <div className="mb-8">
-                <h3 className="text-2xl font-semibold text-[#ffffff] mb-6">Step 3: Integration</h3>
-                <p className="text-[#ffffff]">
-                  Create a .js file titled with the relevant name in the folder location, and then copy and paste the .js portion of the code into the file and save it.
-                </p>
-              </div>
+              <GetStarted
+                subtitle="Step 3: Integration"
+                body="Create a .js file titled with the relevant name in the folder location, and then copy and paste the .js portion of the code into the file and save it."
+              />
 
               {/* Step 4: Import */}
-              <div className="mb-8">
-                <h3 className="text-2xl font-semibold text-[#ffffff] mb-6">Step 4: Import</h3>
-                <p className="text-[#ffffff] mb-6">
-                  Now that you've created the proper component, you can import it into your main application file or any other component. Below is an example of how to use it:
-                </p>
+              <GetStarted
+                subtitle="Step 4: Import"
+                body="Now that you've created the proper component, you can import it into your main application file or any other component. Below is an example of how to use it:"
+                codeSnippet={`import NavbarOne from './components/NavbarOne';\n\nfunction HomePage() {\n  return (\n    <div>\n      <NavbarOne\n        logo="MySite"\n        links={["Home", "About", "Services", "Contact"]}\n      />\n      {/* Other content */}\n    </div>\n  );\n}`}
+              >
                 <img
                   src="/images/docs/step4.png"
                   alt="Screenshot of Step 4"
                 />
-              </div>
+              </GetStarted>
             </div>
           </section>
 
@@ -184,27 +164,27 @@ function HomePage() {
             </div>
           </section>
 
-          {/* AI-Powered Component Generator */}
+          {/* AI-Powered Component Generator Section*/}
           <section id="AI-Powered-Component-Generator">
             <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md space-y-6">
-              <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">AI-Powered Component Generator</h2>
-              <p className="mb-6 text-[#ffffff]">
+              <h2 className="text-3xl font-bold text-[#ffffff]">AI-Powered Component Generator</h2>
+              <p className="text-[#ffffff]">
                 Our AI-powered custom component generator allows you to quickly and easily create components tailored to your specific design and functional needs. Whether you need a Navbar, Button, or Footer, this tool can help you generate code snippets that you can integrate directly into your website project.
               </p>
 
               <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
                 <h4 className="text-lg font-semibold mb-4 text-[#ffffff]">Accessing the AI Model</h4>
-                <p className="mb-6 text-[#ffffff]">
+                <p className="text-[#ffffff]">
                   The AI model feature can be accessed from the <a href="#components" className="text-indigo-400 hover:text-orange-500">Components Page</a> on our website. You'll find a button labeled "Generate with AI" that opens the AI model dialog.
                 </p>
               </div>
 
               <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
                 <h4 className="text-lg font-semibold mb-4 text-[#ffffff]">Filling Out the Form</h4>
-                <p className="mb-6 text-[#ffffff]">
+                <p className="mb-4 text-[#ffffff]">
                   Once the AI model dialog opens, you'll be presented with a form where you can input specific details about the component you want to generate. Here's how to fill out the form:
                 </p>
-                <ul className="list-disc pl-5 mb-4 text-[#ffffff]">
+                <ul className="list-disc pl-5 text-[#ffffff]">
                   <li className="mb-4">
                     <strong>Component Type:</strong> Select the type of component you want (e.g., Navbar, Button, Footer).
                     <br />
@@ -225,7 +205,7 @@ function HomePage() {
                     <br />
                     <em>Example:</em> "Logo on the left side, social media icons on the right."
                   </li>
-                  <li className="mb-4">
+                  <li>
                     <strong>Theme or Style:</strong> Define the overall theme or style, such as a dark theme or minimalist design.
                     <br />
                     <em>Example:</em> "Dark theme with a minimalist design."
@@ -233,28 +213,34 @@ function HomePage() {
                 </ul>
               </div>
 
-              <h4 className="text-lg font-semibold mt-4 mb-2">Generating the Component</h4>
-              <p className="mb-6 text-[#ffffff]">
-                After filling out the form, click the "Submit" button to send your request to the AI model. The AI will process your input and generate a code snippet for the requested component.
-              </p>
+              <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                <h4 className="text-lg font-semibold mb-4 text-[#ffffff]">Generating the Component</h4>
+                <p className="text-[#ffffff]">
+                  After filling out the form, click the "Submit" button to send your request to the AI model. The AI will process your input and generate a code snippet for the requested component.
+                </p>
+              </div>
 
-              <h4 className="text-lg font-semibold mt-4 mb-2">Viewing and Testing the Generated Component</h4>
-              <p className="mb-6 text-[#ffffff]">
-                The generated code will be displayed directly within the AI model dialog. You can copy this code and paste it into your project to see it in action.
-              </p>
-              <p>
-                <strong>Testing Tip:</strong> To test the component, you can paste the code into your existing Next.js project or use an online editor like CodeSandbox for a quick preview.
-              </p>
+              <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                <h4 className="text-lg font-semibold mb-4 text-[#ffffff]">Viewing and Testing the Generated Component</h4>
+                <p className="mb-4 text-[#ffffff]">
+                  The generated code will be displayed directly within the AI model dialog. You can copy this code and paste it into your project to see it in action.
+                </p>
+                <p className="text-[#ffffff]">
+                  <strong>Testing Tip:</strong> To test the component, you can paste the code into your existing Next.js project.
+                </p>
+              </div>
 
-              <h3 className="text-xl font-semibold mt-4 mb-2">Why Use the AI Model?</h3>
-              <ul className="list-disc pl-5 mb-4">
-                <li><strong>Save Time:</strong> The AI model generates code quickly, allowing you to focus on other aspects of your project.</li>
-                <li><strong>Customization:</strong> Tailor the component to your exact specifications without manually coding each detail.</li>
-                <li><strong>Experimentation:</strong> Easily test different design ideas and functional requirements without needing extensive development knowledge.</li>
-              </ul>
-              <p>
-                By integrating this tool into your workflow, you can enhance your productivity and create polished, custom components in a fraction of the time.
-              </p>
+              <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                <h3 className="text-lg font-semibold mb-4 text-[#ffffff]">Why Use the AI Model?</h3>
+                <ul className="list-disc pl-5 mb-4 text-[#ffffff]">
+                  <li><strong>Save Time:</strong> The AI model generates code quickly, allowing you to focus on other aspects of your project.</li>
+                  <li><strong>Customization:</strong> Tailor the component to your exact specifications without manually coding each detail.</li>
+                  <li><strong>Experimentation:</strong> Easily test different design ideas and functional requirements without needing extensive development knowledge.</li>
+                </ul>
+                <p className="text-[#ffffff]">
+                  By integrating this tool into your workflow, you can enhance your productivity and create polished, custom components in a fraction of the time.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -305,19 +291,7 @@ function HomePage() {
                     style={nightOwl}
                     className="text-white"
                   >
-                    {`import NavbarOne from './components/NavbarOne';
-
-function HomePage() {
-  return (
-    <div>
-      <NavbarOne
-        logo="MySite"
-        links={["Home", "About", "Services", "Contact"]}
-      />
-      {/* Other content */}
-    </div>
-  );
-}`}
+                    {`import NavbarOne from './components/NavbarOne';\n\nfunction HomePage() {\n  return (\n    <div>\n      <NavbarOne\n        logo="MySite"\n        links={["Home", "About", "Services", "Contact"]}\n      />\n      {/* Other content */}\n    </div>\n  );\n}`}
                   </SyntaxHighlighter>
                 </div>
               </div>
