@@ -1,6 +1,6 @@
 import React from 'react';
 import FAQItem from '../components/Documentation/FAQitem';
-import GetStarted from '../components/Documentation/getStarted';
+import GetStarted from '../components/Documentation/GetStarted';
 import Navbar from "../components/Website/navbar";
 import NavbarOne from "../components/Navbar/navbarOne";
 import NavbarTwo from "../components/Navbar/navbarTwo";
@@ -114,13 +114,16 @@ const DocumentationLayout = () => {
               <GetStarted
                 subtitle="Step 4: Import"
                 body="Now that you've created the proper component, you can import it into your main application file or any other component. Below is an example of how to use it:"
-                codeSnippet={`import NavbarOne from './components/NavbarOne';\n\nfunction HomePage() {\n  return (\n    <div>\n      <NavbarOne\n        logo="MySite"\n        links={["Home", "About", "Services", "Contact"]}\n      />\n      {/* Other content */}\n    </div>\n  );\n}`}
-              >
-                <img
-                  src="/images/docs/step4.png"
-                  alt="Screenshot of Step 4"
-                />
-              </GetStarted>
+              />
+              <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md mt-4">
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={nightOwl}
+                  className="text-white"
+                >
+                  {`import NavbarOne from './components/NavbarOne';\n\nfunction HomePage() {\n  return (\n    <div>\n      <NavbarOne\n        logo="MySite"\n        links={["Home", "About", "Services", "Contact"]}\n      />\n      {/* Other content */}\n    </div>\n  );\n}`}
+                </SyntaxHighlighter>
+              </div>
             </div>
           </section>
 
