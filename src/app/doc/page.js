@@ -1,6 +1,6 @@
 import React from 'react';
 import FAQItem from '../components/Documentation/FAQitem';
-import GetStarted from '../components/Documentation/GetStarted';
+import GetStarted from '../components/Documentation/GetStarteditem';
 import Navbar from "../components/Website/navbar";
 import NavbarOne from "../components/Navbar/navbarOne";
 import NavbarTwo from "../components/Navbar/navbarTwo";
@@ -89,40 +89,48 @@ const DocumentationLayout = () => {
 
           {/* Getting Started Section */}
           <section id="getting-started">
-            <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md">
-              <h2 className="text-3xl font-bold mb-4 text-[#ffffff]">Getting Started</h2>
+            <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md space-y-6 text-[#ffffff]">
+              <h2 className="text-3xl font-bold">Getting Started</h2>
 
               {/* Step 1: Components */}
-              <GetStarted
-                subtitle="Step 1: Components"
-                body="First, head over to the components page and click on a component category that you are wanting to add to your website."
-              />
+              <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                <GetStarteditem
+                  subtitle="Step 1: Components"
+                  body="First, head over to the components page and click on a component category that you are wanting to add to your website."
+                />
+              </div>
 
               {/* Step 2: Installation */}
-              <GetStarted
-                subtitle="Step 2: Installation"
-                body="Once you find a component template you like, click the 'code' button to reveal the code for that template, and head over to your source code editor."
-              />
+              <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                <GetStarteditem
+                  subtitle="Step 2: Installation"
+                  body="Once you find a component template you like, click the 'code' button to reveal the code for that template, and head over to your source code editor."
+                />
+              </div>
 
               {/* Step 3: Integration */}
-              <GetStarted
-                subtitle="Step 3: Integration"
-                body="Create a .js file titled with the relevant name in the folder location, and then copy and paste the .js portion of the code into the file and save it."
-              />
+              <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                <GetStarteditem
+                  subtitle="Step 3: Integration"
+                  body="Create a .js file titled with the relevant name in the folder location, and then copy and paste the .js portion of the code into the file and save it."
+                />
+              </div>
 
               {/* Step 4: Import */}
-              <GetStarted
-                subtitle="Step 4: Import"
-                body="Now that you've created the proper component, you can import it into your main application file or any other component. Below is an example of how to use it:"
-              />
-              <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md mt-4">
-                <SyntaxHighlighter
-                  language="javascript"
-                  style={nightOwl}
-                  className="text-white"
-                >
-                  {`import NavbarOne from './components/NavbarOne';\n\nfunction HomePage() {\n  return (\n    <div>\n      <NavbarOne\n        logo="MySite"\n        links={["Home", "About", "Services", "Contact"]}\n      />\n      {/* Other content */}\n    </div>\n  );\n}`}
-                </SyntaxHighlighter>
+              <div className="p-4 border border-gray-300 rounded-lg bg-[#444054] shadow-md">
+                <GetStarteditem
+                  subtitle="Step 4: Import"
+                  body="Now that you've created the proper component, you can import it into your main application file or any other component. Below is an example of how to use it:"
+                />
+                <div className="mt-4">
+                  <SyntaxHighlighter
+                    language="javascript"
+                    style={nightOwl}
+                    className="text-white"
+                  >
+                    {`import NavbarOne from './components/NavbarOne';\n\nfunction HomePage() {\n  return (\n    <div>\n      <NavbarOne\n        logo="MySite"\n        links={["Home", "About", "Services", "Contact"]}\n      />\n      {/* Other content */}\n    </div>\n  );\n}`}
+                  </SyntaxHighlighter>
+                </div>
               </div>
             </div>
           </section>
@@ -288,7 +296,7 @@ const DocumentationLayout = () => {
                   question="How do I integrate a component into an existing page on my website?"
                   answer="To integrate a component into an existing page, first, import the component at the top of your file. Then, insert the component within the JSX where you want it to appear on the page. For example:"
                 />
-                <div className="p-4 border border-gray-300 rounded-lg bg-[#333044] shadow-md mt-4">
+                <div className="mt-4">
                   <SyntaxHighlighter
                     language="javascript"
                     style={nightOwl}
