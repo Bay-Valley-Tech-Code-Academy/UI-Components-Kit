@@ -13,7 +13,13 @@ export async function POST(req) {
 
     const response = await openai.chat.completions.create({
       model: "meta-llama/llama-3.1-8b-instruct:free",
-      messages: [{role: "user", content: `Generate a ${formData.componentType} using Tailwind CSS with ${formData.designSpecification} and ${formData.functionalReq}. The component should include ${formData.specificElement} and adhere to a ${formData.theme}.`}],
+      messages: [
+        {
+          role: "system",
+          content: "You are the AI that powers the UI Components creator. Please respond with the javascript code to create the component. Add comments in the code that specify what each part does and how to edit it to fit the user's needs. A brief description should follow on how this code fits the user's requirements. You are not allowed to reply or answer any queries that are not related to website UI component making. Only respond with \"Please provide a valid query regarding UI Components\" if the query is unrelated, even if asked why.",
+        },
+
+        {role: "user", content: `Generate a ${formData.componentType} using Tailwind CSS with ${formData.designSpecification} and ${formData.functionalReq}. The component should include ${formData.specificElement} and adhere to a ${formData.theme}.`}],
       max_tokens: 13100,
     });
 
