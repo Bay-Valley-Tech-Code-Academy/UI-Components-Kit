@@ -6,6 +6,7 @@ import AiModel from "../components/Website/aiModel";
 import NavbarList from "../components/Navbar/navbarList";
 import CarouselList from "../components/Carousel/CarouselList";
 import CardList from "../components/Card/cardList";
+import FooterList from "../components/Footer/footerList";
 import { useState } from "react";
 
 import BVTLogo from '../../../public/images/bvt_logo.png'
@@ -16,7 +17,7 @@ export default function Component() {
 
   const cards = [
     { title: "Navbar", content: <NavbarList /> },
-    { title: "Footer", content: "" },
+    { title: "Footer", content: <FooterList/> },
     { title: "Promo", content: "" },
     { title: "Card", content: <CardList/>},
     { title: "Carousel", content: <CarouselList/>},
