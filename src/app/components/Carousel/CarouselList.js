@@ -4,6 +4,8 @@ import carouselOne from "./carouselOne";
 import carouselOneCode from "./snippets/carouselOneCode";
 import carouselTwo from "./carouselTwo";
 import carouselTwoCode from "./snippets/carouselTwoCode";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function CarouselList() {
   const carousels = [
@@ -37,7 +39,9 @@ export default function CarouselList() {
         return (
           <div key={carousel.id} className="flex flex-col w-full md:w-2/3 mb-8">
             <div className="flex justify-between items-center">
-              <h3 className="text-white text-base md:text-lg">{previewStates[index] ? "Preview" : "Code"}</h3>
+              <h3 className="text-white text-base md:text-lg">
+                {previewStates[index] ? "Preview" : "Code"}
+              </h3>
               <button
                 className="text-[#180728] font-bold p-1 text-base md:text-lg bg-[#FF7D61] hover:bg-[#CC4426] rounded-md m-1"
                 onClick={() => togglePreview(index)}
@@ -46,14 +50,18 @@ export default function CarouselList() {
               </button>
             </div>
             <div
-              className={`w-full h-96 overflow-auto ${previewStates[index] ? "" : "bg-[#1e293b]"}`}
+              className={`w-full h-96 overflow-auto ${previewStates[index] ? "bg-black" : "bg-[#011627]"} p-2`}
             >
               {previewStates[index] ? (
                 <CarouselComponent {...carousel.props} />
               ) : (
-                <pre className="text-white p-4">
-                  <code>{carousel.code}</code>
-                </pre>
+                <SyntaxHighlighter
+                  language="javascript" // or other languages if needed
+                  style={nightOwl} // Choose a theme that you prefer
+                  className="text-white"
+                >
+                  {carousel.code}
+                </SyntaxHighlighter>
               )}
             </div>
           </div>
