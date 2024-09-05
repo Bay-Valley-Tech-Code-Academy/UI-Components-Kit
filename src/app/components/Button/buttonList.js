@@ -9,6 +9,9 @@ import ButtonFour from './buttonFour';
 import buttonFourCode from './snippets/buttonFourCode';
 import ButtonFive from './buttonFive';
 import buttonFiveCode from './snippets/buttonFiveCode';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
+
 
 export default function ButtonList() {
   const buttons = [
@@ -79,7 +82,7 @@ export default function ButtonList() {
 
   return (
     <div className="flex flex-col items-center">
-      <h2>Button</h2>
+      <h2 className="text-white text-4xl p-2">Button</h2>
       {buttons.map((button, index) => {
         const ButtonComponent = button.component;
 
@@ -98,9 +101,13 @@ export default function ButtonList() {
               {previewStates[index] ? (
                 <ButtonComponent {...button.props} />
               ) : (
-                <pre className="text-white p-4">
-                  <code>{button.code}</code>
-                </pre>
+                <SyntaxHighlighter
+                  language="javascript" // or other languages if needed
+                  style={nightOwl} // Choose a theme that you prefer
+                  className="text-white"
+                >
+                  {button.code}
+                </SyntaxHighlighter>
               )}
             </div>
           </div>
