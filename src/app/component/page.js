@@ -5,19 +5,21 @@ import ComponentCard from "../components/Website/componentCard";
 import AiModel from "../components/Website/aiModel";
 import NavbarList from "../components/Navbar/navbarList";
 import CarouselList from "../components/Carousel/CarouselList";
+import ButtonList from "../components/Button/buttonList";
 import CardList from "../components/Card/cardList";
+import FooterList from "../components/Footer/footerList";
 import { useState } from "react";
-
-import BVTLogo from '../../../public/images/bvt_logo.png'
 
 export default function Component() {
   const [selectedContent, setSelectedContent] = useState(null);
+  const [imgSrc, setImgSrc] = useState("/images/ai-white.png");
   const [open, setOpen] = useState(false);
 
   const cards = [
     { title: "Navbar", content: <NavbarList /> },
-    { title: "Footer", content: "" },
+    { title: "Footer", content: <FooterList /> },
     { title: "Promo", content: "" },
+    { title: "Button", content: <ButtonList />},
     { title: "Card", content: <CardList/>},
     { title: "Carousel", content: <CarouselList/>},
   ];
@@ -60,9 +62,16 @@ export default function Component() {
         </div>
       )}
       <div className="p-6 fixed bottom-0 right-0">
-        <img src="/images/ai.png" className="w-12 cursor-pointer" onClick={() => openAiForm()} alt="ai" />
+        <img
+          src={imgSrc}
+          className="w-12 cursor-pointer"
+          onClick={() => openAiForm()}
+          onMouseEnter={() => setImgSrc("/images/ai-color.png")}
+          onMouseLeave={() => setImgSrc("/images/ai-white.png")}
+          alt="ai"
+        />
       </div>
-      <AiModel open = {open} setOpen = {setOpen}/>
+      <AiModel open={open} setOpen={setOpen} />
     </div>
   );
 }

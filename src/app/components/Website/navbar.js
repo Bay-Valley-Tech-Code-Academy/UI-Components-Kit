@@ -15,7 +15,7 @@ export default function Navbar() {
     <nav className="flex justify-between p-4">
       <div>
         <button 
-          className="text-white p-2 text-base md:text-lg font-extrabold"
+          className="text-white p-2 text-base md:text-lg font-extrabold hover:text-[#FF5531]"
           onClick={() => router.push("/")}
         >BVT UI</button>
       </div>

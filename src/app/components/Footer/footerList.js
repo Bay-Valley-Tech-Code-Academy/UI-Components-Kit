@@ -1,27 +1,30 @@
+import React from "react";
 import { useState } from "react";
-
-import carouselOne from "./carouselOne";
-import carouselOneCode from "./snippets/carouselOneCode";
-import carouselTwo from "./carouselTwo";
-import carouselTwoCode from "./snippets/carouselTwoCode";
+import FooterOne from "./footerOne";
+import footerOneCode from "./snippets/footerOneCode";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-export default function CarouselList() {
-  const carousels = [
+export default function FooterList() {
+  const footers = [
     {
       id: 1,
-      component: carouselOne,
-      code: carouselOneCode,
+      component: FooterOne,
+      code: footerOneCode,
     },
-    {
-      id: 2,
-      component: carouselTwo,
-      code: carouselTwoCode,
-    },
+    // {
+    //     id: 2,
+    //     component: FooterTwo,
+    //     code: footerTwoCode,
+    //     props: {
+    //         logo: "logo",
+    //         links:[],
+    //         socials: []
+    //     }
+    // }
   ];
 
-  const [previewStates, setPreviewStates] = useState(carousels.map(() => true));
+  const [previewStates, setPreviewStates] = useState(footers.map(() => true));
 
   const togglePreview = (index) => {
     setPreviewStates((prevStates) =>
@@ -31,13 +34,13 @@ export default function CarouselList() {
 
   return (
     <div className="flex flex-col items-center">
-      <h2 className="text-white text-4xl p-2">Carousel</h2>
-      {/* multiple copies later on for different styles */}
-      {carousels.map((carousel, index) => {
-        const CarouselComponent = carousel.component;
-
+      {/* Header */}
+      <h1 className="text-4xl text-white">Footer</h1>
+      {/* Footer Templates */}
+      {footers.map((footer, index) => {
+        const FooterComponent = footer.component;
         return (
-          <div key={carousel.id} className="flex flex-col w-full md:w-2/3 mb-8">
+          <div key={footer.id} className="flex flex-col w-full md:w-2/3 mb-8">
             <div className="flex justify-between items-center">
               <h3 className="text-white text-base md:text-lg">
                 {previewStates[index] ? "Preview" : "Code"}
@@ -50,17 +53,18 @@ export default function CarouselList() {
               </button>
             </div>
             <div
-              className={`w-full h-96 overflow-auto ${previewStates[index] ? "bg-black" : "bg-[#011627]"} p-2`}
+              className={`w-full h-96 overflow-y-scroll 
+                    ${previewStates[index] ? "bg-black" : "bg-[#011627]"}`}
             >
               {previewStates[index] ? (
-                <CarouselComponent {...carousel.props} />
+                <FooterComponent {...footer.props} />
               ) : (
                 <SyntaxHighlighter
                   language="javascript" // or other languages if needed
                   style={nightOwl} // Choose a theme that you prefer
                   className="text-white"
                 >
-                  {carousel.code}
+                  {footer.code}
                 </SyntaxHighlighter>
               )}
             </div>

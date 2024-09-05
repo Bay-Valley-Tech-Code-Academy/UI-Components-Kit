@@ -7,6 +7,8 @@ import {
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function AiModel({ open, setOpen }) {
   const [openResult, setOpenResult] = useState(false);
@@ -85,17 +87,41 @@ export default function AiModel({ open, setOpen }) {
           >
             {openResult ? (
               <>
-                <div className="bg-[#3D3860] px-4 pb-4 pt-5 sm:p-6 sm:pb-4 overflow-x-scroll">
-                  <div className="sm:flex sm:items-start">
-                    <div className="mt-3 text-center sm:mt-0 sm:text-left">
+                <div className="bg-[#3D3860] px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                  <div className="items-start">
+                    <div className="mt-3 sm:mt-0 text-left">
                       <DialogTitle
                         as="h3"
                         className="text-xl font-semibold leading-6 text-white"
                       >
                         AI custom component
                       </DialogTitle>
-                      <div className="mt-2">
-                        {loadingState && <div className="text-white">...loading</div>}
+                      <div className={`mt-2 ${loadingState && "flex justify-center"}`}>
+                        {loadingState && (
+                          <div className="text-white flex">
+                            <svg
+                              class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                            >
+                              <circle
+                                class="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                stroke-width="4"
+                              ></circle>
+                              <path
+                                class="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                              ></path>
+                            </svg>
+                            loading
+                          </div>
+                        )}
                         {component && (
                           <div className="text-white">
                             {
@@ -103,6 +129,36 @@ export default function AiModel({ open, setOpen }) {
                                 children={component}
                                 remarkPlugins={[remarkGfm]}
                                 className="prose prose-sm lg:prose-base"
+                                components={{
+                                  code(props) {
+                                    const {
+                                      children,
+                                      className,
+                                      node,
+                                      ...rest
+                                    } = props;
+                                    const match = /language-(\w+)/.exec(
+                                      className || ""
+                                    );
+                                    return match ? (
+                                      <SyntaxHighlighter
+                                        {...rest}
+                                        PreTag="div"
+                                        children={String(children).replace(
+                                          /\n$/,
+                                          ""
+                                        )}
+                                        language={match[1]}
+                                        style={nightOwl}
+                                        className="!bg-black"
+                                      />
+                                    ) : (
+                                      <code {...rest} className={className}>
+                                        {children}
+                                      </code>
+                                    );
+                                  },
+                                }}
                               />
                             }
                           </div>
@@ -153,7 +209,7 @@ export default function AiModel({ open, setOpen }) {
                             onChange={updateForm}
                             placeholder="Navbar, Button, Footer"
                             required
-                            className="mb-2"
+                            className="mb-2 p-1"
                           />
                           <label className="text-white pb-1">
                             Design Specifications:
@@ -164,7 +220,7 @@ export default function AiModel({ open, setOpen }) {
                             onChange={updateForm}
                             placeholder="Describe design preferences"
                             required
-                            className="mb-2"
+                            className="mb-2 p-1"
                           ></textarea>
                           <label className="text-white pb-1">
                             Functional Requirements:
@@ -175,7 +231,7 @@ export default function AiModel({ open, setOpen }) {
                             onChange={updateForm}
                             placeholder="Specify functionality (e.g., responsive, dropdown)"
                             required
-                            className="mb-2"
+                            className="mb-2 p-1"
                           ></textarea>
                           <label className="text-white pb-1">
                             Specific Elements or Features:
@@ -185,7 +241,7 @@ export default function AiModel({ open, setOpen }) {
                             value={formData.specificElement}
                             onChange={updateForm}
                             placeholder="e.g., Logo on the left, social media icons"
-                            className="mb-2"
+                            className="mb-2 p-1"
                           ></textarea>
                           <label className="text-white pb-1">
                             Theme or Style:
@@ -196,7 +252,7 @@ export default function AiModel({ open, setOpen }) {
                             value={formData.theme}
                             onChange={updateForm}
                             placeholder="e.g., Dark theme, Minimalist"
-                            className="mb-2"
+                            className="mb-2 p-1"
                           />
                         </form>
                       </div>

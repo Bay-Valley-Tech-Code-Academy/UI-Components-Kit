@@ -15,9 +15,17 @@
     color: var(--code-text); /* Light text color */
     border-radius: 0.375rem; /* Rounded corners */
     padding: 1rem; /* Padding */
+    margin-bottom: 1rem;
     border: 1px solid var(--code-border); /* Darker border color */
     overflow-x: auto; /* Horizontal scroll for long lines */
     font-family: 'Fira Code', monospace; /* Monospace font */
+  }
+
+  .prose ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 
   .prose pre code {
