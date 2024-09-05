@@ -7,6 +7,8 @@ import {
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function AiModel({ open, setOpen }) {
   const [openResult, setOpenResult] = useState(false);
@@ -85,9 +87,9 @@ export default function AiModel({ open, setOpen }) {
           >
             {openResult ? (
               <>
-                <div className="bg-[#3D3860] px-4 pb-4 pt-5 sm:p-6 sm:pb-4 overflow-x-scroll">
-                  <div className="sm:flex sm:items-start">
-                    <div className="mt-3 text-center sm:mt-0 sm:text-left">
+                <div className="bg-[#3D3860] px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                  <div className="items-start">
+                    <div className="mt-3 sm:mt-0 text-left">
                       <DialogTitle
                         as="h3"
                         className="text-xl font-semibold leading-6 text-white"
@@ -95,7 +97,9 @@ export default function AiModel({ open, setOpen }) {
                         AI custom component
                       </DialogTitle>
                       <div className="mt-2">
-                        {loadingState && <div className="text-white">...loading</div>}
+                        {loadingState && (
+                          <div className="text-white">...loading</div>
+                        )}
                         {component && (
                           <div className="text-white">
                             {
@@ -103,6 +107,36 @@ export default function AiModel({ open, setOpen }) {
                                 children={component}
                                 remarkPlugins={[remarkGfm]}
                                 className="prose prose-sm lg:prose-base"
+                                components={{
+                                  code(props) {
+                                    const {
+                                      children,
+                                      className,
+                                      node,
+                                      ...rest
+                                    } = props;
+                                    const match = /language-(\w+)/.exec(
+                                      className || ""
+                                    );
+                                    return match ? (
+                                      <SyntaxHighlighter
+                                        {...rest}
+                                        PreTag="div"
+                                        children={String(children).replace(
+                                          /\n$/,
+                                          ""
+                                        )}
+                                        language={match[1]}
+                                        style={nightOwl}
+                                        className="!bg-black"
+                                      />
+                                    ) : (
+                                      <code {...rest} className={className}>
+                                        {children}
+                                      </code>
+                                    );
+                                  },
+                                }}
                               />
                             }
                           </div>
