@@ -27,7 +27,7 @@ export default function Home() {
           onClick={() => router.push("/component")}
           >Browse components</button>
         </div>
-        <img src="/images/bvt_logo.png" alt="" className="w-1/4 transition duration-300 ease-out hover:scale-125"/>
+        <img src="/images/bvt_logo.png" alt="" className="w-1/4 transition duration-300 ease-out hover:scale-110"/>
       </div>
     </div>
   );
