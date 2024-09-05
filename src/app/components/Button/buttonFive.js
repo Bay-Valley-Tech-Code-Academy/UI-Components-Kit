@@ -1,4 +1,5 @@
 "use client";
+import { ChevronDoubleDownIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 
 import { Component } from "react";
 
@@ -27,18 +28,21 @@ export default class ButtonFive extends Component {
         return (
             <div className="relative">
                 <button
-                    className={`${textColor} ${bgColor} rounded-md p-3`}
+                    className={`${textColor} ${bgColor} rounded p-3`}
                     onClick={this.toggleDropdown}
                 >
-                    {text}
+                    <div className="flex gap-1">
+                        {text}
+                        <ChevronDownIcon className="size-5 mt-1" />
+                    </div>
                 </button>
                 {this.state.isOpen && (
-                    <div>
+                    <div className="absolute bg-white w-36 rounded">
                         {items.map((items, index) => (
                             <a
                                 key={index}
                                 href={items.href}
-                                className="block px-4 py-2"
+                                className="block px-4 py-2 hover:bg-gray-200"
                             >
                                 {items.label}
                             </a>
