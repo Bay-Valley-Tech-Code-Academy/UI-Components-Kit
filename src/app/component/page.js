@@ -5,6 +5,7 @@ import ComponentCard from "../components/Website/componentCard";
 import AiModel from "../components/Website/aiModel";
 import NavbarList from "../components/Navbar/navbarList";
 import CarouselList from "../components/Carousel/CarouselList";
+import ButtonList from "../components/Button/buttonList";
 import CardList from "../components/Card/cardList";
 import FooterList from "../components/Footer/footerList";
 import { useState } from "react";
@@ -18,8 +19,9 @@ export default function Component() {
     { title: "Navbar", content: <NavbarList /> },
     { title: "Footer", content: <FooterList /> },
     { title: "Promo", content: "" },
-    { title: "Card", content: <CardList /> },
-    { title: "Carousel", content: <CarouselList /> },
+    { title: "Button", content: <ButtonList />},
+    { title: "Card", content: <CardList/>},
+    { title: "Carousel", content: <CarouselList/>},
   ];
 
   const handleCardClick = (content) => {
