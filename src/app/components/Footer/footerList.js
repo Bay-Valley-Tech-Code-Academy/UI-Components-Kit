@@ -10,11 +10,6 @@ export default function FooterList() {
             id: 1, 
             component: FooterOne,
             code: footerOneCode,
-            props: {
-                logo: "logo",
-                links: [],
-                socials: []
-            },
         },
         // {
         //     id: 2, 
