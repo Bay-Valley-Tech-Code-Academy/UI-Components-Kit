@@ -57,14 +57,14 @@ export default function CardList() {
             <div className="flex justify-between items-center">
               <h3 className="text-white text-base md:text-lg">{previewStates[index] ? "Preview" : "Code"}</h3>
               <button
-                className="text-white p-1 text-base md:text-lg bg-[#FF5531] hover:bg-[#CC4426] rounded-md m-1"
+                className="text-[#180728] font-bold p-1 text-base md:text-lg bg-[#FF5531] hover:bg-[#CC4426] rounded-md m-1"
                 onClick={() => togglePreview(index)}
               >
                 {previewStates[index] ? "Code ->" : "Preview ->"}
               </button>
             </div>
             <div
-              className={`w-full h-96 overflow-y-scroll ${previewStates[index] ? "bg-black" : "bg-[#1e293b]"}`}
+              className={`w-full h-96 overflow-y-scroll ${previewStates[index] ? "bg-black" : "bg-[#011627]"}`}
             >
               {previewStates[index] ? (
                 <CardComponent {...card.props} />

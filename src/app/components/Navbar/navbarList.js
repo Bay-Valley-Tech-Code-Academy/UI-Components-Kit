@@ -17,7 +17,7 @@ export default function NavbarList() {
       props: {
         logo: "MySite",
         links: ["Home", "About", "Services", "Contact"],
-        
+
         textColor: "text-black",
         hoverColor: "hover:text-purple-600",
       },
@@ -66,7 +66,9 @@ export default function NavbarList() {
         return (
           <div key={navbar.id} className="flex flex-col w-full md:w-2/3 mb-8">
             <div className="flex justify-between items-center">
-              <h3 className="text-white text-base md:text-lg">{previewStates[index] ? "Preview" : "Code"}</h3>
+              <h3 className="text-white text-base md:text-lg">
+                {previewStates[index] ? "Preview" : "Code"}
+              </h3>
               <button
                 className="text-[#180728] font-bold p-1 text-base md:text-lg bg-[#FF7D61] hover:bg-[#CC4426] rounded-md m-1"
                 onClick={() => togglePreview(index)}
@@ -75,7 +77,7 @@ export default function NavbarList() {
               </button>
             </div>
             <div
-              className={`w-full h-96 overflow-y-scroll ${previewStates[index] ? "bg-[#523B82]" : "bg-[#1e293b]"}`}
+              className={`w-full h-96 overflow-y-scroll ${previewStates[index] ? "bg-black" : "bg-[#011627]"}`}
             >
               {previewStates[index] ? (
                 <NavbarComponent {...navbar.props} />

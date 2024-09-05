@@ -96,9 +96,31 @@ export default function AiModel({ open, setOpen }) {
                       >
                         AI custom component
                       </DialogTitle>
-                      <div className="mt-2">
+                      <div className={`mt-2 ${loadingState && "flex justify-center"}`}>
                         {loadingState && (
-                          <div className="text-white">...loading</div>
+                          <div className="text-white flex">
+                            <svg
+                              class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                            >
+                              <circle
+                                class="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                stroke-width="4"
+                              ></circle>
+                              <path
+                                class="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                              ></path>
+                            </svg>
+                            loading
+                          </div>
                         )}
                         {component && (
                           <div className="text-white">
@@ -187,7 +209,7 @@ export default function AiModel({ open, setOpen }) {
                             onChange={updateForm}
                             placeholder="Navbar, Button, Footer"
                             required
-                            className="mb-2"
+                            className="mb-2 p-1"
                           />
                           <label className="text-white pb-1">
                             Design Specifications:
@@ -198,7 +220,7 @@ export default function AiModel({ open, setOpen }) {
                             onChange={updateForm}
                             placeholder="Describe design preferences"
                             required
-                            className="mb-2"
+                            className="mb-2 p-1"
                           ></textarea>
                           <label className="text-white pb-1">
                             Functional Requirements:
@@ -209,7 +231,7 @@ export default function AiModel({ open, setOpen }) {
                             onChange={updateForm}
                             placeholder="Specify functionality (e.g., responsive, dropdown)"
                             required
-                            className="mb-2"
+                            className="mb-2 p-1"
                           ></textarea>
                           <label className="text-white pb-1">
                             Specific Elements or Features:
@@ -219,7 +241,7 @@ export default function AiModel({ open, setOpen }) {
                             value={formData.specificElement}
                             onChange={updateForm}
                             placeholder="e.g., Logo on the left, social media icons"
-                            className="mb-2"
+                            className="mb-2 p-1"
                           ></textarea>
                           <label className="text-white pb-1">
                             Theme or Style:
@@ -230,7 +252,7 @@ export default function AiModel({ open, setOpen }) {
                             value={formData.theme}
                             onChange={updateForm}
                             placeholder="e.g., Dark theme, Minimalist"
-                            className="mb-2"
+                            className="mb-2 p-1"
                           />
                         </form>
                       </div>
