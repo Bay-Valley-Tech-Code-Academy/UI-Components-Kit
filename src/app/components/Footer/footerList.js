@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import FooterOne from "./footerOne";
+import FooterTwo from "./footerTwo";
+import footerTwoCode from "./snippets/footerTwoCode";
 import footerOneCode from "./snippets/footerOneCode";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -12,16 +14,16 @@ export default function FooterList() {
       component: FooterOne,
       code: footerOneCode,
     },
-    // {
-    //     id: 2,
-    //     component: FooterTwo,
-    //     code: footerTwoCode,
-    //     props: {
-    //         logo: "logo",
-    //         links:[],
-    //         socials: []
-    //     }
-    // }
+    {
+        id: 2,
+        component: FooterTwo,
+        code: footerTwoCode,
+        props: {
+            logo: "bvt_logo.png",
+            links:[],
+            socials: []
+        }
+    }
   ];
 
   const [previewStates, setPreviewStates] = useState(footers.map(() => true));
