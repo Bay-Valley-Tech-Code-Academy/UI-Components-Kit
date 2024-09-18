@@ -1,8 +1,10 @@
 import { useState } from "react";
 import CardOne from './cardOne';
 import CardTwo from './cardTwo';
+import CardThree from './cardThree';
 import CardOneCode from './snippets/cardOneCode.js';
 import CardTwoCode from './snippets/cardTwoCode.js';
+import CardThreeCode from './snippets/cardThreeCode.js';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -25,6 +27,20 @@ export default function CardList() {
       id: 2,
       component: CardTwo,
       code: CardTwoCode,
+      props: {
+        title:"Bird Watching",
+        description:"Tailwind Box Component",
+        button:"Learn More",
+        author:"Jane Doe",
+        buttonColor:"bg-green-600",
+        hoverColor:"hover:bg-red-500",
+        width:"w-full"
+      },
+    },
+    {
+      id: 3,
+      component: CardThree,
+      code: CardThreeCode,
       props: {
         title:"Bird Watching",
         description:"Tailwind Box Component",
