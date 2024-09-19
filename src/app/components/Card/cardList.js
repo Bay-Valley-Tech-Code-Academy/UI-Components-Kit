@@ -41,15 +41,6 @@ export default function CardList() {
       id: 3,
       component: CardThree,
       code: CardThreeCode,
-      props: {
-        title:"Bird Watching",
-        description:"Tailwind Box Component",
-        button:"Learn More",
-        author:"Jane Doe",
-        buttonColor:"bg-green-600",
-        hoverColor:"hover:bg-red-500",
-        width:"w-full"
-      },
     },
   ];
 
