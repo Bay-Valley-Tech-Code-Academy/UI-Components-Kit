@@ -1,8 +1,12 @@
 import { useState } from "react";
 import CardOne from './cardOne';
 import CardTwo from './cardTwo';
+import CardThree from './cardThree';
+import CardFour from './cardFour';
 import CardOneCode from './snippets/cardOneCode.js';
 import CardTwoCode from './snippets/cardTwoCode.js';
+import CardThreeCode from './snippets/cardThreeCode.js';
+import CardFourCode from './snippets/cardFourCode.js';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -34,6 +38,24 @@ export default function CardList() {
         hoverColor:"hover:bg-red-500",
         width:"w-full"
       },
+    },
+    {
+      id: 3,
+      component: CardThree,
+      code: CardThreeCode,
+    },
+    {
+      id: 4,
+      component: CardFour,
+      code: CardFourCode,
+      props: {
+        image: "https://media-cdn.tripadvisor.com/media/photo-s/1c/47/18/ee/tonys-courtyard-cafe.jpg",
+        restaurant: "Toni's Courtyard Cafe",
+        type: "Cafe",
+        price: "$$",
+        rating: "*****",
+        review: "26"
+      }
     },
   ];
 

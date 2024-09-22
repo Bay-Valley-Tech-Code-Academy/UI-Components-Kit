@@ -8,6 +8,7 @@ import CarouselList from "../components/Carousel/CarouselList";
 import ButtonList from "../components/Button/buttonList";
 import CardList from "../components/Card/cardList";
 import FooterList from "../components/Footer/footerList";
+import PromoList from "../components/Promo/promoList";
 import { useState } from "react";
 
 export default function Component() {
@@ -18,7 +19,7 @@ export default function Component() {
   const cards = [
     { title: "Navbar", content: <NavbarList /> },
     { title: "Footer", content: <FooterList /> },
-    { title: "Promo", content: "" },
+    { title: "Promo", content: <PromoList/> },
     { title: "Button", content: <ButtonList />},
     { title: "Card", content: <CardList/>},
     { title: "Carousel", content: <CarouselList/>},
