@@ -3,6 +3,7 @@ import CardOne from './cardOne';
 import CardTwo from './cardTwo';
 import CardThree from './cardThree';
 import CardFour from './cardFour';
+import CardFive from './cardFive';
 import CardOneCode from './snippets/cardOneCode.js';
 import CardTwoCode from './snippets/cardTwoCode.js';
 import CardThreeCode from './snippets/cardThreeCode.js';
@@ -57,6 +58,10 @@ export default function CardList() {
         review: "26"
       }
     },
+    {
+      id: 5,
+      component: CardFive,
+    }
   ];
 
   const [previewStates, setPreviewStates] = useState(cards.map(() => true));
