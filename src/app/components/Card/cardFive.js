@@ -6,17 +6,17 @@ export default function cardFive() {
     const [signUp, setSignUp] = useState(false);
 
     return (
-        <>
-            <div className="w-3/4 sm:w-1/2 lg:w-1/4 bg-[#AAD15F] rounded-xl flex flex-col items-center">
-                <h1 className="text-6xl p-3 text-center">Login</h1>
+        <div className="flex justify-center">
+            <div className="flex flex-col bg-white w-1/2 p-5 items-center rounded-xl">
+                <h1 className="text-3xl p-3 text-center">Login</h1>
                 {!forgotPassword ? (
-                <form className="flex flex-col w-3/4 pt-6">
+                <form className="flex flex-col pt-6">
                     <input
                     type="email"
                     name="email"
                     placeholder="Email"
                     required
-                    className="mb-4 p-1"
+                    className="mb-4 p-3 bg-orange-100 rounded-md"
                     />
                     {signUp && (
                     <input
@@ -24,7 +24,7 @@ export default function cardFive() {
                         name="userName"
                         placeholder="User Name"
                         required
-                        className="mb-4 p-1"
+                        className="mb-4 p-3 bg-orange-100 rounded-md"
                     />
                     )}
                     <input
@@ -32,7 +32,7 @@ export default function cardFive() {
                     name="password"
                     placeholder="Password"
                     required
-                    className="mb-4 p-1"
+                    className="mb-4 p-3 bg-orange-100 rounded-md"
                     />
                     {signUp && (
                     <input
@@ -40,7 +40,7 @@ export default function cardFive() {
                         name="verifyPassword"
                         placeholder="Verify Password"
                         required
-                        className="mb-4 p-1"
+                        className="mb-4 p-1 bg-orange-100 rounded-md"
                     />
                     )}
                     <div className="text-center p-2">
@@ -94,7 +94,7 @@ export default function cardFive() {
                     name="email"
                     placeholder="Email"
                     required
-                    className="mb-4 p-1"
+                    className="mb-4 p-1 bg-orange-100 rounded-md"
                     />
                     <div className="text-center p-2">
                     <button
@@ -115,6 +115,6 @@ export default function cardFive() {
                 </form>
                 )}
             </div>
-        </>
+        </div>
     )
 }
