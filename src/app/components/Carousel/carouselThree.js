@@ -90,7 +90,7 @@ const PrevArrow = (props) => {
 };
 
 
-// Note if your global.css put 
+// Note in your global.css put 
 // .carousel-image {
 //     width: 100%; /* Make the image take up the full width of the carousel */
 //     height: 400px; /* Set a fixed height */
