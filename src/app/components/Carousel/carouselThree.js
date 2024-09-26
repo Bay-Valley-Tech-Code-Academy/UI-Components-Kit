@@ -89,6 +89,7 @@ const PrevArrow = (props) => {
   );
 };
 
+//ah yes here is to push 
 
 // Note in your global.css put 
 // .carousel-image {
