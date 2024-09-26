@@ -4,6 +4,8 @@ import carouselOne from "./carouselOne";
 import carouselOneCode from "./snippets/carouselOneCode";
 import carouselTwo from "./carouselTwo";
 import carouselTwoCode from "./snippets/carouselTwoCode";
+import carouselThree from "./carouselThree";
+import carouselThreeCode from "./snippets/carouselThreeCode";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -18,6 +20,11 @@ export default function CarouselList() {
       id: 2,
       component: carouselTwo,
       code: carouselTwoCode,
+    },
+    {
+      id: 3,
+      component: carouselThree,
+      code: carouselThreeCode,
     },
   ];
 

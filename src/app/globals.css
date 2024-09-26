@@ -38,3 +38,10 @@
     padding: 0.1rem 0.2rem; /* Padding for inline code */
     border-radius: 0.2rem; /* Rounded corners */
   }
+
+  .carousel-image {
+    width: 100%; /* Make the image take up the full width of the carousel */
+    height: 400px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio while filling the area */
+  }
+  
