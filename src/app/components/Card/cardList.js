@@ -3,10 +3,12 @@ import CardOne from './cardOne';
 import CardTwo from './cardTwo';
 import CardThree from './cardThree';
 import CardFour from './cardFour';
+import CardFive from './cardFive';
 import CardOneCode from './snippets/cardOneCode.js';
 import CardTwoCode from './snippets/cardTwoCode.js';
 import CardThreeCode from './snippets/cardThreeCode.js';
 import CardFourCode from './snippets/cardFourCode.js';
+import CardFiveCode from './snippets/cardFiveCode.js';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -57,6 +59,11 @@ export default function CardList() {
         review: "26"
       }
     },
+    {
+      id: 5,
+      component: CardFive,
+      code: CardFiveCode
+    }
   ];
 
   const [previewStates, setPreviewStates] = useState(cards.map(() => true));
