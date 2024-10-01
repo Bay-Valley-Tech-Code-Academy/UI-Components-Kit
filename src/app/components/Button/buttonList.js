@@ -9,6 +9,8 @@ import ButtonFour from './buttonFour';
 import buttonFourCode from './snippets/buttonFourCode';
 import ButtonFive from './buttonFive';
 import buttonFiveCode from './snippets/buttonFiveCode';
+import ButtonSix from './buttonSix';
+import buttonSixCode from './snippets/buttonSixCode';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -70,6 +72,16 @@ export default function ButtonList() {
         ]
       },
     },
+    {
+      id: 6,
+      component: ButtonSix,
+      code: buttonSixCode,
+      props: {
+        text: "Open Menu",
+        textColor: "text-white",
+        bgColor: "bg-blue-500",
+      },
+    }
   ];
 
   const [previewStates, setPreviewStates] = useState(buttons.map(()=> true));
@@ -116,3 +128,4 @@ export default function ButtonList() {
     </div>
   )
 }
+
